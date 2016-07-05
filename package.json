@@ -1,0 +1,8 @@
+{
+  "name": "rexrayconfig.emccode.com",
+  "description": "dynamically create rexray configurations",
+  "version": "0.1.0",
+  "scripts": {
+    "test": "node test/faketest.js"
+  }
+}

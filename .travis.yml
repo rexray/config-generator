@@ -1,3 +1,10 @@
+language: node_js
+node_js:
+  - "0.11"
+# whitelist
+branches:
+  only:
+    - master
 deploy:
   edge: true
   provider: cloudfoundry
@@ -7,3 +14,5 @@ deploy:
   api: https://api.run.pivotal.io
   organization: emccode
   space: production
+  on:
+    branch: master

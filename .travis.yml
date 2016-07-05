@@ -1,18 +1,17 @@
 language: node_js
 node_js:
-  - "0.11"
-# whitelist
+- '0.11'
 branches:
   only:
-    - master
+  - master
 deploy:
   edge: true
   provider: cloudfoundry
+  api: https://api.run.pivotal.io
   username: kendrick.coleman@emc.com
   password:
-    secure: XwSzQeWHSfKaWWYOMfiRb/J6mhefzamgyCe3mnRcf/yyCoDalqOQfl4pXExUAC/fjK0XPmdqxwyHjC11MSK6C7YudT3AYn+37EzVjhfZtbSqLugjZJ2tzU81ON9JGsMnbPXydhjQn540LB9s5ZQ83V/wnC7Hma/4aJThc5YVxnMRokkfFbrmiHcKcBFTTpQydpMWJyB757XfEcOJOXuM+R0Lqu8HISonnsLLXxqezMUjMJ6olQapngULJpEtph2c3r9C1y4NZDO3/sDFeAXlVkLmUvSFZKbSg0I+TDZtkasZxymnawWWWaeXRGfZZ4OoYqAnzlFMj104uQSkS35X5yjjCzBalCcfmXN6/qLFHv2o9WLRUxZtqJGFbW5w2GWIc+JFF4HqApcOckr7qUz/cUXcqSp04s6aZ9kUs44qnhz/H0DbYGOGBbB9KotKCe6YD0eMQot5T1bhritkxofd4Dj3y+7nOUMI1RGQuSGmtaHBjxPzFiv+qjg6lcu3NMKNmMPgOHjbdvfW5mOYfe09Wh6FuMGhNtrJZcsLfqIirAwCp3eUxXfv5Qm3ocmKAWXbIgHyKdsWSMBKhgbNUmUxdKsRbdbBxnl74xSFA+yOP262QDkQjT68IUX/GXeZ3I09NWYqycsu8jCvKteJa2nD+Q3yOn3cIli3G/97C0zAplM=
-  api: https://api.run.pivotal.io
+    secure: eMQeXMBmpfiPSxOiugfTaqY2EpJGDFhgZK1E2tYQs2UdaeprbwvRqv+OJGSTQFXneAfZIikVsdJEE3vYJNQGRMVtF0JjSQKz0R4/K/Y2/yugy4Zz1EzDXnes315C+64094gagomfPaQIC1k/X+C7YGqe2lPaOxLM6KJ6xGdiDdR7dxtiIzp/KPkqAeZHuV638sWAyZ65RxVHiLDVCo8frB9/IHxnfQVEUGmGLRllpN410hExKWaPV4uc3u1WxxRSlTZyEn1oOfFE1rmI2aOuYex4bZQ/C4h4SLMabwPASeIopaOxxmXP4p6T0oAjKR6xnm/P40FYdeK0nORsb4Sefh/q43YPM9rlIDIAzG+e6DFfdAOD7hrFLtnfWZEmGrUfodtbhWlPI9uj2Yb4fs6C+8Ordhd6o3Gg/Yuu5bRR1afVe5F2BTkpR8GncvBvAxauYT3bT76Nu6Z07iIDk03NwYXV7olACYxtgTkDm73n9QMp9+Jmy1LCvuDhMRczD7sVqbQRlY6gIk3D1MO8A7ieq7a89uHxAoGhd3LR9T+xuakQeFVhvGMWRreP13Q6j4kBrV4xkbWflqSiAB3pNM1BZZlYx9DjKSOPhGRm0M+RVzp/HxJmK2LOK6/w8593e0BlR9KQNWcOhp75YhmfH8Bhm3OOF/A9CZAaQpH5CXvfuPc=
   organization: emccode
   space: production
   on:
-    branch: master
+    repo: kacole2/rexray-config-generator

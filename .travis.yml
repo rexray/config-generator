@@ -1,0 +1,9 @@
+deploy:
+  edge: true
+  provider: cloudfoundry
+  username: kendrick.coleman@emc.com
+  password:
+    secure: XwSzQeWHSfKaWWYOMfiRb/J6mhefzamgyCe3mnRcf/yyCoDalqOQfl4pXExUAC/fjK0XPmdqxwyHjC11MSK6C7YudT3AYn+37EzVjhfZtbSqLugjZJ2tzU81ON9JGsMnbPXydhjQn540LB9s5ZQ83V/wnC7Hma/4aJThc5YVxnMRokkfFbrmiHcKcBFTTpQydpMWJyB757XfEcOJOXuM+R0Lqu8HISonnsLLXxqezMUjMJ6olQapngULJpEtph2c3r9C1y4NZDO3/sDFeAXlVkLmUvSFZKbSg0I+TDZtkasZxymnawWWWaeXRGfZZ4OoYqAnzlFMj104uQSkS35X5yjjCzBalCcfmXN6/qLFHv2o9WLRUxZtqJGFbW5w2GWIc+JFF4HqApcOckr7qUz/cUXcqSp04s6aZ9kUs44qnhz/H0DbYGOGBbB9KotKCe6YD0eMQot5T1bhritkxofd4Dj3y+7nOUMI1RGQuSGmtaHBjxPzFiv+qjg6lcu3NMKNmMPgOHjbdvfW5mOYfe09Wh6FuMGhNtrJZcsLfqIirAwCp3eUxXfv5Qm3ocmKAWXbIgHyKdsWSMBKhgbNUmUxdKsRbdbBxnl74xSFA+yOP262QDkQjT68IUX/GXeZ3I09NWYqycsu8jCvKteJa2nD+Q3yOn3cIli3G/97C0zAplM=
+  api: https://api.run.pivotal.io
+  organization: emccode
+  space: production

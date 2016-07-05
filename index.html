@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>REX-Ray Configuration Generator</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/yeti/bootstrap.min.css">
+    <link rel="stylesheet" href="stylesheets/main.css">
+    <link rel="stylesheet" href="stylesheets/responsive.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular.min.js"></script>
+    <script src="js/formdata.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/1.3.3/ui-bootstrap.min.js"></script>
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="/images/favicons/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/images/favicons/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="/images/favicons/manifest.json">
+    <link rel="mask-icon" href="/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="/images/favicons/favicon.ico">
+    <meta name="msapplication-config" content="/images/favicons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+</head>
+<body ng-app="mainForm">
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/" style="margin:10px 0">
+                    REX-Ray Configuration Generator
+                </a>
+                <img id="rrimage" src="images/rexraycolor.png" width="40px">
+            </div>
+            <!-- pull right for webview in responsive.css -->
+            <div id="navbar" class="collapse navbar-collapse pull-right">
+                <ul class="nav navbar-nav">
+                    <li><a href="https://github.com/emccode/rexray" class="banner-image" target="_blank"><img src="images/rexhead.png" width="50px"></a></li>
+                    <li><a href="http://rexray.readthedocs.io/en/latest/" class="banner-image" target="_blank"><img src="images/readthedocs-white.png" width="31px"></a></li>
+                    <li><a href="https://github.com/kacole2/rexray-config-generator" class="banner-image" target="_blank"><img src="images/github.png" width="40px"></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="opener">
+            <h2>Create REX-Ray Configurations with Ease</h2>
+            <p class="lead">Enter your information and watch the configuration be generated automatically</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div ng-controller="GlobalLoggingLevelController">
+                <div ng-controller="AddServiceController">
+                    <div ng-controller="AddServiceButtonController">
+                        <div class="col-md-6">
+                            <form class="form-horizontal">
+                                <fieldset>
+                                    <!-- Form Name -->
+                                    <legend></legend>
+
+                                    <!-- GLOBAL LOGGING LEVEL DROPDOWN -->
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label" for="global-logging-level">Global Logging Level</label>
+                                        <div class="col-md-8">
+                                            <select ng-options="loggingLevelOption.label for loggingLevelOption in loggingLevelsData.loggingLevelOptions track by loggingLevelOption.value" ng-model="loggingLevelsData.selectedLoggingLevel" id="global-logging-level" name="global-logging-level" class="form-control">
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <!-- ADD A NEW SERVICE DROPDOWN -->
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label" for="add-service">Add A Service</label>
+                                        <div class="col-md-6">
+                                            <select ng-model="serviceData.serviceRepeatSelect" id="add-service" name="add-service" class="form-control">
+                                                <option ng-repeat="serviceOption in serviceData.serviceOptions" value="{{serviceOption.value}}">{{serviceOption.label}}</option>
+                                            </select>
+                                        </div>
+
+                                        <!-- ADD NEW FORM BUTTON -->
+                                        <div class="col-md-2">
+                                            <button ng-click="addNewService()" ng-model="service.type" id="addServiceButton" name="addServiceButton" class="btn btn-primary">Add</button>
+                                        </div>
+                                        <br>
+
+                                        <!-- SCALEIO FORM -->
+                                        <div id="scaleioServiceForm" ng-show="service.type == 'scaleio'" ng-repeat="service in services" ng-include="'services/scaleio.html'">
+                                        </div>
+
+                                        <!-- ISILON FORM -->
+                                        <div id="isilonServiceForm" ng-repeat="service in services" ng-show="service.type == 'isilon'" ng-include="'services/isilon.html'">
+                                        </div>
+
+                                        <!-- VIRTUALBOX FORM -->
+                                        <div id="virtualboxServiceForm" ng-repeat="service in services" ng-show="service.type == 'virtualbox'" ng-include="'services/virtualbox.html'">
+                                        </div>
+
+                                        <!-- LIBSTORAGE OPTIONS FORM -->
+                                        <div id="libStorageServiceForm" ng-repeat="service in services" ng-show="service.type" ng-include="'services/libstorage.html'">
+                                        </div>
+
+                                    </div>
+                                </fieldset>
+                            </form>
+                        </div>
+
+                        <!-- the space between -->
+                        <div class="col-md-1"></div>
+
+                        <!-- THE YAML OUTPUT -->
+                        <div class="col-md-5">
+                            <h3 class="text-center">REX-Ray Configuration YAML</h3>
+                            <h4 class="yamlbox">/etc/rexray/config.yml</h4>
+                            <br>
+                            <div class="yamlbox">
+                                <yaml-Configuration/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+        <br>
+        <br>
+            <footer class="footer pull-right">
+                    <p>&copy; 2016 EMC {code} | <img src="images/angular.png" width="20px"></p>
+            </footer>
+        </div>
+    </div>
+
+    <!-- Google Analytics Script -->
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-57022521-4', 'auto');
+        ga('send', 'pageview');
+    </script>
+</body>
+</html>

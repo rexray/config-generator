@@ -1,0 +1,17 @@
+@import url("https://fonts.googleapis.com/css?family=Source+Code+Pro");
+.opener {
+  padding: 60px;
+  text-align: center;
+}
+
+.banner-image {
+	padding: 0;
+	margin: 0;
+}
+
+.yamlbox {
+	border: 2px solid #666666;
+	padding: 10px;
+	font-family: 'Source Code Pro';
+	background-color: #e6e6e6;
+}

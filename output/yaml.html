@@ -1,0 +1,75 @@
+
+<p>
+rexray:<br>
+&nbsp&nbsp logLevel: {{loggingLevelsData.selectedLoggingLevel.value}}<br>
+libstorage:<br>
+&nbsp&nbsp logLevel: {{loggingLevelsData.selectedLoggingLevel.value}}<br>
+&nbsp&nbsp service: {{services[0].type}}<br>
+<!--<span ng-repeat="(k,v) in services[0]" ng-if="k.substring(0,4) == 'libS'">-->
+<span ng-repeat="(k,v) in services[0] | kvFilter | filter:'libS' | limitTo:1">
+		&nbsp&nbsp integration:
+		<br>
+		&nbsp&nbsp&nbsp&nbsp volume:
+		<br>
+		&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp operations:
+		<br>
+</span>
+
+<span ng-repeat="(k,v) in services[0] | kvFilter | multiStringFilter:'libSdisableCreate libStorageCreateSize' | limitTo:1">
+	&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp create: 
+	<br>
+</span>
+
+<span ng-repeat="(k,v) in services[0]" ng-if="k.substring(0,4) == 'libS'">
+	<span ng-if="k == 'libSdisableCreate' && v == true">
+		&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp disable: {{v}}
+		<br>
+	</span>
+	<span ng-if="k == 'libStorageCreateSize' && v != ''">
+		&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp default:
+		<br>
+		&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp size: {{v}}
+		<br>
+	</span>
+</span>
+
+<span ng-repeat="(k,v) in services[0] | kvFilter | multiStringFilter:'libSenablePreemption libSrootPath' | limitTo:1">
+	&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp mount: 
+	<br>
+</span>
+
+<span ng-repeat="(k,v) in services[0]" ng-if="k.substring(0,4) == 'libS'">
+	<span ng-if="k == 'libSenablePreemption' && v == true">
+		&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp preempt: {{v}}
+		<br>
+	</span>
+	<span ng-if="k == 'libSrootPath' && v != ''">
+		&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp rootPath: {{v}}
+		<br>
+	</span>
+</span>
+
+<span ng-repeat="(k,v) in services[0]" ng-if="k.substring(0,4) == 'libS'">
+	<span ng-if="k == 'libSdisableRemove' && v == true">
+		&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp remove: 
+		<br>
+		&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp disable: {{v}}
+		<br>
+	</span>
+	<span ng-if="k == 'libSignoreUsedCount' && v == true">
+		&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp unmount: 
+		<br>
+		&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp ignoreUsedCount: {{v}}
+		<br>
+	</span>
+	<span ng-if="k == 'libSdisablePathCache' && v == true">
+		&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp path:
+		<br>
+		&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp cache: false
+		<br>
+	</span>
+</span>
+ 
+{{services[0].type}}:<br>
+<span ng-repeat="(k,v) in services[0]" ng-if="$index > 1 && k.substring(0,4) != 'libS'">&nbsp&nbsp{{k}}: {{v}}<br></span>
+</p>

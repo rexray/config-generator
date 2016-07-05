@@ -1,0 +1,8 @@
+---
+applications:
+- name: rexrayconfig
+  memory: 128M
+  instances: 1
+  path: .
+  domain: emccode.com
+  buildpack: staticfile_buildpack

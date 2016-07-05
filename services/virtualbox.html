@@ -1,0 +1,49 @@
+<!-- NEW VIRTUALBOX FORM -->
+<br>
+<hr>
+<h4 class="text-center">Oracle VirtualBox Options</h4>
+<br>
+<div class="row">
+    <h5 class="text-center">Access & Credentials</h5>
+    <label for="virtualboxEndpoint" class="col-md-2 control-label">Endpoint:</label>
+    <div class="col-md-10">
+        <input type="text" id="virtualboxEndpoint" class="form-control" placeholder="http://virtualboxhost:18083" ng-model="service.endpoint">
+    </div>
+</div>
+<div class="row">
+    <label for="virtualboxUsername" class="col-md-2 control-label">Username:</label>
+    <div class="col-md-4">
+        <input type="text" id="virtualboxUsername" class="form-control" placeholder="optional" ng-model="service.userName">
+    </div>
+
+    <label for="virtualboxPassword" class="col-md-2 control-label">Password:</label>
+    <div class="col-md-4">
+        <input type="text" id="virtualboxPassword" class="form-control" placeholder="optional" ng-model="service.password">
+    </div>
+</div>
+<div class="row">
+    <h5 class="text-center">SSL Options</h5>
+    <label for="virtualboxInsecure" class="col-md-2 control-label">TLS:</label>
+    <div class="col-md-4">
+        <input type="checkbox" name="virtualboxInsecure" id="virtualboxInsecure" ng-model="service.tls">
+    </div>
+</div>
+<div class="row">
+    <h5 class="text-center">Storage Configurations</h5>
+    <label for="virtualboxVolumePath" class="col-md-2 control-label">Volume Path:</label>
+    <div class="col-md-4">
+        <input type="text" id="virtualboxVolumePath" class="form-control" ng-model="service.volumePath">
+    </div>
+
+    <label for="virtualboxControllerName" class="col-md-2 control-label">Controller Name:</label>
+    <div class="col-md-4">
+        <input type="text" id="virtualboxControllerName" class="form-control" ng-model="service.controllerName">
+    </div>
+</div>
+<div class="row">
+    <br>
+    <label for="virtualboxLocalMachineNameOrId" class="col-md-4 control-label">Local Machine Name or ID:</label>
+    <div class="col-md-8">
+        <input type="text" id="virtualboxLocalMachineNameOrId" class="form-control" placeholder="for development use only" ng-model="service.localMachineNameOrId">
+    </div>
+</div>

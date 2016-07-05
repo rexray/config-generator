@@ -1,0 +1,45 @@
+<!-- LIBSTORAGE OPTIONS -->
+<br>
+<hr>
+<h4 class="text-center">libStorage Options</h4>
+<br>
+<div class="row">
+    <h5 class="text-center">Permission</h5>
+    <label for="libStorageDisableCreate" class="col-md-4 control-label">Disable Create:</label>
+    <div class="col-md-2">
+        <input type="checkbox" name="libStorageDisableCreate" id="libStorageDisableCreate" ng-model="service.libSdisableCreate">
+    </div>
+    <label for="libStorageDisableRemove" class="col-md-4 control-label">Disable Remove:</label>
+    <div class="col-md-2">
+        <input type="checkbox" name="libStorageDisableRemove" id="libStorageDisableRemove" ng-model="service.libSdisableRemove">
+    </div>
+</div>
+<div class="row">
+    <br><h5 class="text-center">High Availability</h5>
+    <label for="libStorageEnablePreemption" class="col-md-4 control-label">Enable Preemption:</label>
+    <div class="col-md-2">
+        <input type="checkbox" name="libStorageEnablePreemption" id="libStorageEnablePreemption" ng-model="service.libSenablePreemption">
+    </div>
+    <label for="libStorageIgnoreUsedCount" class="col-md-4 control-label">Ignore Used Count:</label>
+    <div class="col-md-2">
+        <input type="checkbox" name="libStorageIgnoreUsedCount" id="libStorageIgnoreUsedCount" ng-model="service.libSignoreUsedCount">
+    </div>
+</div>
+<div class="row">
+    <br><h5 class="text-center">Other Options</h5>
+    <label for="libStorageDisablePathCache" class="col-md-4 control-label">Disable Path Cache:</label>
+    <div class="col-md-2">
+        <input type="checkbox" name="libStorageDisablePathCache" id="libStorageDisablePathCache" ng-model="service.libSdisablePathCache">
+    </div>
+    <label for="libStorageRootPath" class="col-md-2 control-label">Root Path:</label>
+    <div class="col-md-4">
+        <input type="text" id="libStorageRootPath" class="form-control" placeholder="/data" ng-model="service.libSrootPath">
+    </div>
+</div>
+<div class="row">
+<br>
+    <label for="libStorageCreateSize" class="col-md-4 control-label">Default Create Size (in GB):</label>
+    <div class="col-md-2">
+        <input type="number" min="1" name="libStorageCreateSize" id="libStorageCreateSize" ng-model="service.libStorageCreateSize">
+    </div>
+</div>

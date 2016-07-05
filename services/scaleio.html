@@ -1,0 +1,85 @@
+<!-- SCALEIO FORM -->
+<br>
+<hr>
+<h4 class="text-center">EMC ScaleIO Options</h4>
+<br>
+<div class="row">
+    <h5 class="text-center">Access & Credentials</h5>
+    <label for="scaleioEndpoint" class="col-md-2 control-label">Endpoint:</label>
+    <div class="col-md-4">
+        <input type="text" id="scaleioEndpoint" class="form-control" placeholder="https://host_ip/api" ng-model="service.endpoint">
+    </div>
+
+    <label for="scaleioApiVersion" class="col-md-2 control-label">API Version:</label>
+    <div class="col-md-4">
+        <input type="text" id="scaleioApiVersion" class="form-control" ng-model="service.apiVersion">
+    </div>
+</div>
+<div class="row">
+    <label for="scaleioUsername" class="col-md-2 control-label">Username:</label>
+    <div class="col-md-4">
+        <input type="text" id="scaleioUsername" class="form-control" placeholder="admin" ng-model="service.userName">
+    </div>
+
+    <label for="scaleioPassword" class="col-md-2 control-label">Password:</label>
+    <div class="col-md-4">
+        <input type="text" id="scaleioPassword" class="form-control" placeholder="password" ng-model="service.password">
+    </div>
+</div>
+<div class="row">
+    <h5 class="text-center">SSL Options</h5>
+    <label for="scaleioInsecure" class="col-md-2 control-label">Insecure:</label>
+    <div class="col-md-4">
+        <input type="checkbox" name="scaleioInsecure" id="scaleioInsecure" ng-model="service.insecure">
+    </div>
+
+    <label for="scaleioUseCerts" class="col-md-2 control-label">Use Certs:</label>
+    <div class="col-md-4">
+        <input type="checkbox" name="scaleioUseCerts" id="scaleioUseCerts" ng-model="service.useCerts">
+    </div>
+</div>
+<div class="row">
+    <h5 class="text-center">System Identification</h5>
+    <label for="scaleioSystemId" class="col-md-2 control-label">System ID:</label>
+    <div class="col-md-4">
+        <input type="text" id="scaleioSystemId" class="form-control" placeholder="0" ng-model="service.systemID">
+    </div>
+
+    <label for="scaleioSystemName" class="col-md-2 control-label">System Name:</label>
+    <div class="col-md-4">
+        <input type="text" id="scaleioSystemName" class="form-control" placeholder="sysv" ng-model="service.systemName">
+    </div>
+</div>
+<div class="row">
+    <h5 class="text-center">Protection Domain Identification</h5>
+    <label for="scaleioProtectionDomainId" class="col-md-2 control-label">Protection Domain ID:</label>
+    <div class="col-md-4">
+        <input type="text" id="scaleioProtectionDomainId" class="form-control" placeholder="0" ng-model="service.protectionDomainID">
+    </div>
+
+    <label for="scaleioProtectionDomainName" class="col-md-2 control-label">Protection Domain Name:</label>
+    <div class="col-md-4">
+        <input type="text" id="scaleioProtectionDomainName" class="form-control" placeholder="corp" ng-model="service.protectionDomainName">
+    </div>
+</div>
+<div class="row">
+    <h5 class="text-center">Storage Configuration</h5>
+    <label for="scaleioStoragePoolId" class="col-md-2 control-label">Storage Pool ID:</label>
+    <div class="col-md-4">
+        <input type="text" id="scaleioStoragePoolId" class="form-control" placeholder="0" ng-model="service.storagePoolID">
+    </div>
+
+    <label for="scaleioStoragePoolName" class="col-md-2 control-label">Storage Pool Name:</label>
+    <div class="col-md-4">
+        <input type="text" id="scaleioStoragePoolName" class="form-control" placeholder="gold" ng-model="service.storagePoolName">
+    </div>
+</div>
+<div class="row">
+    <label for="scaleioThinOrThick" class="col-md-2 control-label">Thin or Thick Volumes</label>
+    <div class="col-md-4">
+        <select ng-model="service.thinOrThick" class="form-control" id="addServiceButton" name="addServiceButton">
+            <option value="ThinProvisioned">Thin</option>
+            <option value="ThickProvisioned">Thick</option>
+        </select>
+    </div>
+</div>

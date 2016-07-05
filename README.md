@@ -22,6 +22,9 @@ At this time, only 1 service can be added and it's encouraged to validate using 
 - Add libStorage Server configuration options
 
 ## Contribution
+
+To do local development, utilize `python -m SimpleHTTPServer`.
+
 Create a fork of the project into your own reposity. Make all your necessary changes and create a pull request with a description on what was added or removed and details explaining the changes in lines of code. If approved, project owners will merge it
 
 ## Licensing

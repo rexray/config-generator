@@ -1,45 +1,53 @@
 <!-- LIBSTORAGE OPTIONS -->
 <br>
 <hr>
-<h4 class="text-center">libStorage Options</h4>
+<h4 class="text-center">libStorage Options <a href="http://libstorage.readthedocs.io/en/stable/user-guide/config/#volume-configuration"><span class="glyphicon glyphicon-link"></span></a></h4>
 <br>
 <div class="row">
-    <h5 class="text-center">Permission</h5>
-    <label for="libStorageDisableCreate" class="col-md-4 control-label">Disable Create:</label>
+    <h5 class="text-center">Permissions</h5>
+    <label for="libStorageDisableCreate" class="col-md-4 control-label" uib-popover="The disable create feature enables you to disallow any volume creation activity. Any requests will be returned in a successful manner, but the create will not get passed to the backend storage platform" popover-trigger="mouseenter">Disable Create:</label>
     <div class="col-md-2">
         <input type="checkbox" name="libStorageDisableCreate" id="libStorageDisableCreate" ng-model="service.libSdisableCreate">
     </div>
-    <label for="libStorageDisableRemove" class="col-md-4 control-label">Disable Remove:</label>
+    <label for="libStorageDisableRemove" class="col-md-4 control-label" uib-popover="The disable remove feature enables you to disallow any volume removal activity. Any requests will be returned in a successful manner, but the remove will not get passed to the backend storage platform." popover-trigger="mouseenter">Disable Remove:</label>
     <div class="col-md-2">
         <input type="checkbox" name="libStorageDisableRemove" id="libStorageDisableRemove" ng-model="service.libSdisableRemove">
     </div>
 </div>
 <div class="row">
     <br><h5 class="text-center">High Availability</h5>
-    <label for="libStorageEnablePreemption" class="col-md-4 control-label">Enable Preemption:</label>
+    <label for="libStorageEnablePreemption" class="col-md-4 control-label" uib-popover="There is a capability to preemptively detach any existing attachments to other instances before attempting a mount. This will enable use cases for availability where another instance must be able to take control of a volume without the current owner instance being involved. The operation is considered equivalent to a power off of the existing instance for the device." popover-trigger="mouseenter">Enable Preemption:</label>
     <div class="col-md-2">
         <input type="checkbox" name="libStorageEnablePreemption" id="libStorageEnablePreemption" ng-model="service.libSenablePreemption">
     </div>
-    <label for="libStorageIgnoreUsedCount" class="col-md-4 control-label">Ignore Used Count:</label>
+    <label for="libStorageIgnoreUsedCount" class="col-md-4 control-label" uib-popover="By default accounting takes place during operations that are performed on Mount, Unmount, and other operations. This only has impact when running as a service through the HTTP/JSON interface since the counts are persisted in memory. The purpose of respecting the Used Count is to ensure that a volume is not unmounted until the unmount requests have equaled the mount requests.
+
+    In the Docker use case if there are multiple containers sharing a volume on the same host, the the volume will not be unmounted until the last container is stopped.
+
+    The following setting should only be used if you wish to disable this functionality. This would make sense if the accounting is being done from higher layers and all unmount operations should proceed without control." popover-trigger="mouseenter">Ignore Used Count:</label>
     <div class="col-md-2">
         <input type="checkbox" name="libStorageIgnoreUsedCount" id="libStorageIgnoreUsedCount" ng-model="service.libSignoreUsedCount">
     </div>
 </div>
 <div class="row">
-    <br><h5 class="text-center">Other Options</h5>
-    <label for="libStorageDisablePathCache" class="col-md-4 control-label">Disable Path Cache:</label>
+    <br><h5 class="text-center">Path Cache</h5>
+    <label for="libStorageDisablePathCache" class="col-md-4 control-label" uib-popover="Path cache is enabled by default. In order to optimize Path requests, the paths of actively mounted volumes returned as the result of a List request are cached. Subsequent Path requests for unmounted volumes will not dirty the cache. Only once a volume has been mounted will the cache be marked dirty and the volume's path retrieved and cached once more." popover-trigger="mouseenter">Disable Path Cache:</label>
     <div class="col-md-2">
         <input type="checkbox" name="libStorageDisablePathCache" id="libStorageDisablePathCache" ng-model="service.libSdisablePathCache">
     </div>
-    <label for="libStorageRootPath" class="col-md-2 control-label">Root Path:</label>
-    <div class="col-md-4">
-        <input type="text" id="libStorageRootPath" class="form-control" placeholder="/data" ng-model="service.libSrootPath">
+    <label for="libStorageDisablePathCache" class="col-md-4 control-label" uib-popover="Async is enabled by default. Setting the async property to false simply means that the initial population of the cache will be handled synchronously, slowing down the program's startup time" popover-trigger="mouseenter">Disable Async:</label>
+    <div class="col-md-2">
+        <input type="checkbox" name="libStorageDisablePathCacheAsync" id="libStorageDisablePathCacheAsync" ng-model="service.libSdisablePathCacheAsync">
     </div>
 </div>
 <div class="row">
-<br>
-    <label for="libStorageCreateSize" class="col-md-4 control-label">Default Create Size (in GB):</label>
+    <br><h5 class="text-center">Other Options</h5>
+    <label for="libStorageRootPath" class="col-md-2 control-label" uib-popover="When volumes are mounted there can be an additional path that is specified to be created and passed as the valid mount point. This is required for certain applications that do not want to place data from the root of a mount point. The default is the /data path. If a value is set by linux.integration.volume. operations.mount.rootPath, then the default will be overwritten." popover-trigger="mouseenter">Root Path:</label>
+    <div class="col-md-4">
+        <input type="text" id="libStorageRootPath" class="form-control" placeholder="/data" ng-model="service.libSrootPath">
+    </div>
+    <label for="libStorageCreateSize" class="col-md-4 control-label" uib-popover="The default size of the volume during creation." popover-trigger="mouseenter">Default Create Size (in GB):</label>
     <div class="col-md-2">
-        <input type="number" min="1" name="libStorageCreateSize" id="libStorageCreateSize" ng-model="service.libStorageCreateSize">
+        <input type="number" min="1" class="form-control" name="libStorageCreateSize" id="libStorageCreateSize" ng-model="service.libStorageCreateSize">
     </div>
 </div>

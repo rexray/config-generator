@@ -37,7 +37,6 @@ mainForm.controller('AddServiceButtonController', ['$scope', '$rootScope', funct
 						$scope.services.push({
 							"id":newServiceNo,
 							"type": serviceType,
-							"apiVersion": "2.0",
 							"insecure" : true,
 							"thinOrThick" : "ThinProvisioned"
 						});

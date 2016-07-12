@@ -1,7 +1,7 @@
 <!-- NEW VIRTUALBOX FORM -->
 <br>
 <hr>
-<h4 class="text-center">Oracle VirtualBox Options</h4>
+<h4 class="text-center">Oracle VirtualBox <a href="http://libstorage.readthedocs.io/en/stable/user-guide/storage-providers/#virtualbox"><span class="glyphicon glyphicon-link"></span></a></h4>
 <br>
 <div class="row">
     <h5 class="text-center">Access & Credentials</h5>
@@ -11,12 +11,12 @@
     </div>
 </div>
 <div class="row">
-    <label for="virtualboxUsername" class="col-md-2 control-label">Username:</label>
+    <label for="virtualboxUsername" class="col-md-2 control-label" uib-popover="Leveraging authentication for the VirtualBox webserver is optional. The HTTP SOAP API can have authentication disabled by running VBoxManage setproperty websrvauthlibrary null." popover-trigger="mouseenter">Username:</label>
     <div class="col-md-4">
         <input type="text" id="virtualboxUsername" class="form-control" placeholder="optional" ng-model="service.userName">
     </div>
 
-    <label for="virtualboxPassword" class="col-md-2 control-label">Password:</label>
+    <label for="virtualboxPassword" class="col-md-2 control-label" uib-popover="Leveraging authentication for the VirtualBox webserver is optional. The HTTP SOAP API can have authentication disabled by running VBoxManage setproperty websrvauthlibrary null." popover-trigger="mouseenter">Password:</label>
     <div class="col-md-4">
         <input type="text" id="virtualboxPassword" class="form-control" placeholder="optional" ng-model="service.password">
     </div>
@@ -30,20 +30,25 @@
 </div>
 <div class="row">
     <h5 class="text-center">Storage Configurations</h5>
-    <label for="virtualboxVolumePath" class="col-md-2 control-label">Volume Path:</label>
+    <label for="virtualboxVolumePath" class="col-md-2 control-label" uib-popover="Choose a volumePath to store the volume files or virtual disks. This path should be created ahead of time." popover-trigger="mouseenter">Volume Path:</label>
     <div class="col-md-4">
         <input type="text" id="virtualboxVolumePath" class="form-control" ng-model="service.volumePath">
     </div>
 
-    <label for="virtualboxControllerName" class="col-md-2 control-label">Controller Name:</label>
+    <label for="virtualboxControllerName" class="col-md-2 control-label" uib-popover="Hot-Plugging is required, which limits the usefulness of this driver to SATA only. Ensure that your VM has pre-created this controller and it is named SATA. Otherwise the controllerName field must be populated with the name of the controller you wish to use. The port count must be set manually as it cannot be increased when the VMs are on. A count of 30 is suggested." popover-trigger="mouseenter">Controller Name:</label>
     <div class="col-md-4">
         <input type="text" id="virtualboxControllerName" class="form-control" ng-model="service.controllerName">
     </div>
 </div>
 <div class="row">
     <br>
-    <label for="virtualboxLocalMachineNameOrId" class="col-md-4 control-label">Local Machine Name or ID:</label>
+    <label for="virtualboxLocalMachineNameOrId" class="col-md-4 control-label" uib-popover="The localMachineNameOrId parameter is for development use where you force libStorage to use a specific VM identity" popover-trigger="mouseenter">Local Machine Name or ID:</label>
     <div class="col-md-8">
         <input type="text" id="virtualboxLocalMachineNameOrId" class="form-control" placeholder="for development use only" ng-model="service.localMachineNameOrId">
     </div>
+</div>
+<br>
+<div class="row">
+    <label for="isilonDataSubnet" class="col-md-2 control-label" uib-popover="Snapshot and create volume from volume functionality is not available yet with this driver" popover-trigger="mouseenter">Snapshots:</label>
+    <span class="glyphicon glyphicon-info-sign" uib-popover="Snapshot and create volume from volume functionality is not available yet with this driver" popover-trigger="mouseenter"></span>
 </div>

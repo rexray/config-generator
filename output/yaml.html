@@ -63,10 +63,22 @@ libstorage:<br>
 		&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp ignoreUsedCount: {{v}}
 		<br>
 	</span>
+</span>
+
+<span ng-repeat="(k,v) in services[0] | kvFilter | multiStringFilter:'libSdisablePathCache libSdisablePathCacheAsync' | limitTo:1">
+	&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp path: 
+	<br>
+	&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp cache:
+	<br>
+</span>
+
+<span ng-repeat="(k,v) in services[0]" ng-if="k.substring(0,4) == 'libS'">
 	<span ng-if="k == 'libSdisablePathCache' && v == true">
-		&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp path:
+		&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp enabled: false
 		<br>
-		&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp cache: false
+	</span>
+	<span ng-if="k == 'libSdisablePathCacheAsync' && v == true">
+		&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp async: false
 		<br>
 	</span>
 </span>

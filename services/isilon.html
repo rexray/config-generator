@@ -1,7 +1,7 @@
 <!-- NEW ISILON FORM -->
 <br>
 <hr>
-<h4 class="text-center">EMC Isilon Options</h4>
+<h4 class="text-center">EMC Isilon <a href="http://libstorage.readthedocs.io/en/stable/user-guide/storage-providers/#isilon"><span class="glyphicon glyphicon-link"></span></a></h4>
 <br>
 <div class="row">
     <h5 class="text-center">Access & Credentials</h5>
@@ -10,13 +10,13 @@
         <input type="text" id="isilonEndpoint" class="form-control" placeholder="https://endpoint:8080" ng-model="service.endpoint">
     </div>
 
-    <label for="isilonGroup" class="col-md-2 control-label">Group:</label>
+    <label for="isilonGroup" class="col-md-2 control-label" uib-popover="group defaults to the group of the user specified in the configuration. Only use this option if you need volumes to be created with a different group." popover-trigger="mouseenter">Group:</label>
     <div class="col-md-4">
         <input type="text" id="isilonGroup" class="form-control" placeholder="groupname" ng-model="service.group">
     </div>
 </div>
 <div class="row">
-    <label for="isilonUsername" class="col-md-2 control-label">Username:</label>
+    <label for="isilonUsername" class="col-md-2 control-label" uib-popover="The account used to access the Isilon cluster must be in a role with the following privileges: Namespace Access (ISI_PRIV_NS_IFS_ACCESS), Platform API (ISI_PRIV_LOGIN_PAPI), NFS (ISI_PRIV_NFS), Restore (ISI_PRIV_IFS_RESTORE), Quota (ISI_PRIV_QUOTA) (if quotas are enabled), Snapshot (ISI_PRIV_SNAPSHOT) (if snapshots are used)" popover-trigger="mouseenter">Username:</label>
     <div class="col-md-4">
         <input type="text" id="isilonUsername" class="form-control" placeholder="admin" ng-model="service.username">
     </div>
@@ -26,26 +26,40 @@
         <input type="text" id="isilonPassword" class="form-control" placeholder="password" ng-model="service.password">
     </div>
 </div>
+<br>
+<div class="row">
+    <h5 class="text-center">SSL Options</h5>
+    <label for="isilonInsecure" class="col-md-2 control-label" uib-popover="insecure defaults to false" popover-trigger="mouseenter">Insecure:</label>
+    <div class="col-md-4">
+        <input type="checkbox" name="isilonInsecure" id="isilonInsecure" ng-model="service.insecure">
+    </div>
+</div>
+<br>
 <div class="row">
     <h5 class="text-center">Optional Storage Configurations</h5>
-    <label for="isilonVolumePath" class="col-md-2 control-label">Volume Path:</label>
+    <label for="isilonVolumePath" class="col-md-2 control-label" uib-popover="volumePath represents the location under /ifs/volumes to allow volumes to be created and removed. volumePath defaults to "". This will have all new volumes created directly under /ifs/volumes. It is not necessary to export this volume." popover-trigger="mouseenter">Volume Path:</label>
     <div class="col-md-4">
         <input type="text" id="isilonVolumePath" class="form-control" placeholder="/ifs/volumes" ng-model="service.volumePath">
     </div>
 
-    <label for="isilonNfsHost" class="col-md-2 control-label">NFS Host:</label>
+    <label for="isilonNfsHost" class="col-md-2 control-label" uib-popover="nfsHost is the configurable host used when mounting exports" popover-trigger="mouseenter">NFS Host:</label>
     <div class="col-md-4">
         <input type="text" id="isilonNfsHost" class="form-control" placeholder="nfsHost" ng-model="service.nfsHost">
     </div>
 </div>
 <div class="row">
-    <label for="isilonDataSubnet" class="col-md-2 control-label">Data Subnet:</label>
+    <label for="isilonDataSubnet" class="col-md-2 control-label" uib-popover="dataSubnet is the subnet the REX-Ray driver is running on. The dataSubnet parameter is required so the Isilon driver can restrict access to attached volumes to the host that REX-Ray is on." popover-trigger="mouseenter">Data Subnet:</label>
     <div class="col-md-4">
         <input type="text" id="isilonDataSubnet" class="form-control" placeholder="subnet" ng-model="service.dataSubnet">
     </div>
 
-    <label for="isilonQuotas" class="col-md-2 control-label">Quotas:</label>
+    <label for="isilonQuotas" class="col-md-2 control-label" uib-popover="quotas defaults to false. Set to true if you have a SmartQuotas license enabled for the capacity size functionality of libStorage to work. " popover-trigger="mouseenter">Quotas:</label>
     <div class="col-md-4">
         <input type="checkbox" name="isilonQuotas" id="isilonQuotas" ng-model="service.quotas">
     </div>
+</div>
+<br>
+<div class="row">
+    <label for="isilonDataSubnet" class="col-md-2 control-label" uib-popover="A SnapshotIQ license must be enabled on the Isilon cluster for the snapshot functionality of libStorage to work." popover-trigger="mouseenter">Snapshots:</label>
+    <span class="glyphicon glyphicon-info-sign" uib-popover="A SnapshotIQ license must be enabled on the Isilon cluster for the snapshot functionality of libStorage to work." popover-trigger="mouseenter"></span>
 </div>

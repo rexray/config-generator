@@ -76,6 +76,16 @@ mainForm.filter('kvFilter', function(){
 		return allKeys
 }})
 
+mainForm.filter('emptyKvFilter', function() {
+  	return function (objects){
+  		var filteredObject = {};
+  		angular.forEach(objects, function (value, key) {
+  			if (value) filteredObject[key] = value;
+  		});
+  		return filteredObject;
+  	};
+});
+
 mainForm.filter('multiStringFilter', function(){
 	return function (input, searchText, AND_OR) {
         var returnArray = [],

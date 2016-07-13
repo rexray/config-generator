@@ -15,7 +15,7 @@ libstorage:<br>
 </span>
 
 &nbsp service: {{services[0].type}}<br>
-<span ng-repeat="(k,v) in services[0] | emptyKvFilter | kvFilter | noLoggingFilter | limitTo:1">
+<span ng-repeat="(k,v) in services[0] | emptyKvFilter | kvFilter | noLogging | limitTo:1">
 		&nbsp integration:
 		<br>
 		&nbsp&nbsp&nbsp volume:

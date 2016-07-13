@@ -59,7 +59,7 @@
 
     <div class="container">
         <div class="row">
-            <div ng-controller="RexrayLoggingLevelController">
+            <div ng-controller="GlobalLoggingLevelController">
                 <div ng-controller="AddServiceController">
                     <div ng-controller="AddServiceButtonController">
                         <div class="col-md-6">
@@ -70,9 +70,9 @@
 
                                     <!-- GLOBAL LOGGING LEVEL DROPDOWN -->
                                     <div class="form-group">
-                                        <label class="col-md-4 control-label" for="Rexray-logging-level" uib-popover="The default level is 'Warn'" popover-trigger="mouseenter">REX-Ray Logging Level</label>
+                                        <label class="col-md-4 control-label" for="global-logging-level" uib-popover="The default level is 'Warn'" popover-trigger="mouseenter">REX-Ray Logging Level</label>
                                         <div class="col-md-8">
-                                            <select ng-options="loggingLevelOption.label for loggingLevelOption in loggingLevelsData.loggingLevelOptions track by loggingLevelOption.value" ng-model="loggingLevelsData.selectedLoggingLevel" id="Rexray-logging-level" name="Rexray-logging-level" class="form-control">
+                                            <select ng-options="loggingLevelOption.label for loggingLevelOption in loggingLevelsData.loggingLevelOptions track by loggingLevelOption.value" ng-model="loggingLevelsData.selectedLoggingLevel" id="global-logging-level" name="global-logging-level" class="form-control">
                                             </select>
                                         </div>
                                     </div>

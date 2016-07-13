@@ -1,6 +1,6 @@
 var mainForm = angular.module('mainForm', ['ui.bootstrap']);
 
-mainForm.controller('GlobalLoggingLevelController', ['$scope', function($scope){
+mainForm.controller('RexrayLoggingLevelController', ['$scope', function($scope){
 	$scope.loggingLevelsData = {
   		loggingLevelOptions: [
 			{value: 'error', label: 'Error'},
@@ -73,8 +73,9 @@ mainForm.filter('kvFilter', function(){
 		angular.forEach(objects, function (value, key) {
 				allKeys.push(key);
             })
-		return allKeys
-}})
+		return allKeys;
+	};
+});
 
 mainForm.filter('emptyKvFilter', function() {
   	return function (objects){
@@ -84,6 +85,18 @@ mainForm.filter('emptyKvFilter', function() {
   		});
   		return filteredObject;
   	};
+});
+
+mainForm.filter('noLoggingFilter', function(){
+	return function (arrays){
+		var allKeysArray = []
+		angular.forEach(arrays, function (x) {
+			if (x.substring(0, 4) == "libS" && x != 'libSmainLoggingLevel') {
+				allKeysArray.push(x);
+			}
+		})
+		return allKeysArray;
+	};
 });
 
 mainForm.filter('multiStringFilter', function(){

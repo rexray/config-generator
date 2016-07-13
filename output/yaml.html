@@ -7,7 +7,7 @@ libstorage:<br>
 &nbsp&nbsp&nbsp level: {{loggingLevelsData.selectedLoggingLevel.value}}<br>
 &nbsp service: {{services[0].type}}<br>
 <!--<span ng-repeat="(k,v) in services[0]" ng-if="k.substring(0,4) == 'libS'">-->
-<span ng-repeat="(k,v) in services[0] | kvFilter | filter:'libS' | limitTo:1">
+<span ng-repeat="(k,v) in services[0] | emptyKvFilter | kvFilter | filter:'libS' | limitTo:1">
 		&nbsp integration:
 		<br>
 		&nbsp&nbsp&nbsp volume:
@@ -16,12 +16,12 @@ libstorage:<br>
 		<br>
 </span>
 
-<span ng-repeat="(k,v) in services[0] | kvFilter | multiStringFilter:'libSdisableCreate libStorageCreateSize' | limitTo:1">
+<span ng-repeat="(k,v) in services[0] | emptyKvFilter | kvFilter | multiStringFilter:'libSdisableCreate libStorageCreateSize' | limitTo:1">
 	&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp create: 
 	<br>
 </span>
 
-<span ng-repeat="(k,v) in services[0]" ng-if="k.substring(0,4) == 'libS'">
+<span ng-repeat="(k,v) in services[0] | emptyKvFilter" ng-if="k.substring(0,4) == 'libS'">
 	<span ng-if="k == 'libSdisableCreate' && v == true">
 		&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp disable: {{v}}
 		<br>
@@ -34,12 +34,12 @@ libstorage:<br>
 	</span>
 </span>
 
-<span ng-repeat="(k,v) in services[0] | kvFilter | multiStringFilter:'libSenablePreemption libSrootPath' | limitTo:1">
+<span ng-repeat="(k,v) in services[0] | emptyKvFilter | kvFilter | multiStringFilter:'libSenablePreemption libSrootPath' | limitTo:1">
 	&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp mount: 
 	<br>
 </span>
 
-<span ng-repeat="(k,v) in services[0]" ng-if="k.substring(0,4) == 'libS'">
+<span ng-repeat="(k,v) in services[0] | emptyKvFilter" ng-if="k.substring(0,4) == 'libS'">
 	<span ng-if="k == 'libSenablePreemption' && v == true">
 		&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp preempt: {{v}}
 		<br>
@@ -50,7 +50,7 @@ libstorage:<br>
 	</span>
 </span>
 
-<span ng-repeat="(k,v) in services[0]" ng-if="k.substring(0,4) == 'libS'">
+<span ng-repeat="(k,v) in services[0] | emptyKvFilter" ng-if="k.substring(0,4) == 'libS'">
 	<span ng-if="k == 'libSdisableRemove' && v == true">
 		&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp remove: 
 		<br>
@@ -65,14 +65,14 @@ libstorage:<br>
 	</span>
 </span>
 
-<span ng-repeat="(k,v) in services[0] | kvFilter | multiStringFilter:'libSdisablePathCache libSdisablePathCacheAsync' | limitTo:1">
+<span ng-repeat="(k,v) in services[0] | emptyKvFilter | kvFilter | multiStringFilter:'libSdisablePathCache libSdisablePathCacheAsync' | limitTo:1">
 	&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp path: 
 	<br>
 	&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp cache:
 	<br>
 </span>
 
-<span ng-repeat="(k,v) in services[0]" ng-if="k.substring(0,4) == 'libS'">
+<span ng-repeat="(k,v) in services[0] | emptyKvFilter" ng-if="k.substring(0,4) == 'libS'">
 	<span ng-if="k == 'libSdisablePathCache' && v == true">
 		&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp enabled: false
 		<br>
@@ -84,5 +84,5 @@ libstorage:<br>
 </span>
  
 {{services[0].type}}:<br>
-<span ng-repeat="(k,v) in services[0]" ng-if="$index > 1 && k.substring(0,4) != 'libS'">&nbsp {{k}}: {{v}}<br></span>
+<span ng-repeat="(k,v) in services[0] | emptyKvFilter" ng-if="$index > 1 && k.substring(0,4) != 'libS'">&nbsp {{k}}: {{v}}<br></span>
 </p>

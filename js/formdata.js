@@ -127,3 +127,7 @@ mainForm.directive('yamlConfiguration', function(){
 		}
 	};
 });
+
+$(document).ready(function(){
+	$("#output").sticky({topSpacing:100});
+});

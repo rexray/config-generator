@@ -1,13 +1,21 @@
 
 <p>
 rexray:<br>
-&nbsp logLevel: {{loggingLevelsData.selectedLoggingLevel.value}}<br>
+<span ng-if="loggingLevelsData.selectedLoggingLevel.value != 'warn'">
+	&nbsp logLevel: {{loggingLevelsData.selectedLoggingLevel.value}}<br>
+</span>
 libstorage:<br>
-&nbsp logging:<br>
-&nbsp&nbsp&nbsp level: {{loggingLevelsData.selectedLoggingLevel.value}}<br>
+<span ng-repeat="(k,v) in services[0] | emptyKvFilter" ng-if="k.substring(0,4) == 'libS' && v != 'warn'">
+	<span ng-if="k == 'libSmainLoggingLevel' && v != ''">
+		&nbsp logging:
+		<br>
+		&nbsp&nbsp&nbsp level: {{v}}
+		<br>
+	</span>
+</span>
+
 &nbsp service: {{services[0].type}}<br>
-<!--<span ng-repeat="(k,v) in services[0]" ng-if="k.substring(0,4) == 'libS'">-->
-<span ng-repeat="(k,v) in services[0] | emptyKvFilter | kvFilter | filter:'libS' | limitTo:1">
+<span ng-repeat="(k,v) in services[0] | emptyKvFilter | kvFilter | noLoggingFilter | limitTo:1">
 		&nbsp integration:
 		<br>
 		&nbsp&nbsp&nbsp volume:

@@ -51,3 +51,15 @@
         <input type="number" min="1" class="form-control" name="libStorageCreateSize" id="libStorageCreateSize" ng-model="service.libStorageCreateSize">
     </div>
 </div>
+<br>
+<div class="row">
+    <label for="libSmainLoggingLevel" class="col-md-2 control-label" uib-popover="The default level is 'Warn'" popover-trigger="mouseenter">Logging Level:</label>
+    <div class="col-md-4">
+        <select class="form-control" name="libSmainLoggingLevel" id="libSmainLoggingLevel" ng-model="service.libSmainLoggingLevel" ng-init="service.libSmainLoggingLevel = 'warn'" >
+            <option value="error">Error</option>
+            <option value="warn">Warn</option>
+            <option value="info">Info</option>
+            <option value="debug">Debug</option>
+        </select>
+    </div>
+</div>

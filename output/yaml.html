@@ -5,13 +5,11 @@ rexray:<br>
 	&nbsp logLevel: {{loggingLevelsData.selectedLoggingLevel.value}}<br>
 </span>
 libstorage:<br>
-<span ng-repeat="(k,v) in services[0] | emptyKvFilter" ng-if="k.substring(0,4) == 'libS' && v != 'warn'">
-	<span ng-if="k == 'libSmainLoggingLevel' && v != ''">
-		&nbsp logging:
-		<br>
-		&nbsp&nbsp&nbsp level: {{v}}
-		<br>
-	</span>
+<span ng-repeat="(k,v) in services[0] | emptyKvFilter" ng-if="k == 'libSmainLoggingLevel' && v != 'warn'">
+	&nbsp logging:
+	<br>
+	&nbsp&nbsp&nbsp level: {{v}}
+	<br>
 </span>
 
 &nbsp service: {{services[0].type}}<br>

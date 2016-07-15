@@ -58,6 +58,19 @@ mainForm.controller('AddServiceButtonController', ['$scope', '$rootScope', funct
 				}
 			}
 		};
+
+		$scope.downloadOutput = function(element) {
+			var text = $(element).text();
+			var nonBlockingSpace = new RegExp(String.fromCharCode(160), "g");
+			text = text.replace(/^\s*\n/gm, "").replace(nonBlockingSpace, " ");
+			var element = document.createElement('a');
+			element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+			element.setAttribute('download', 'config.yml');
+			element.style.display = 'none';
+			document.body.appendChild(element);
+			element.click();
+			document.body.removeChild(element);
+		}
 		
 		/* NOT USED YET
 		$scope.removeService = function() {
@@ -126,12 +139,12 @@ mainForm.directive('yamlConfiguration', function(){
 		// name: '',
 		// priority: 1,
 		// terminal: true,
-		 scope: true, // {} = isolate, true = child, false/undefined = no change
+		scope: true, // {} = isolate, true = child, false/undefined = no change
 		// controller: function($scope, $element, $attrs, $transclude) {},
 		// require: 'ngModel', // Array = multiple requires, ? = optional, ^ = check parent elements
 		restrict: 'AE',
 		//template: 'My services: {{services}}<br>My Logging Level: {{loggingLevelsData.selectedLoggingLevel.value}} </br>',
-		 templateUrl: 'output/yaml.html',
+		templateUrl: 'output/yaml.html',
 		// replace: true,
 		// transclude: true,
 		// compile: function(tElement, tAttrs, function transclude(function(scope, cloneLinkingFn){ return function linking(scope, elm, attrs){}})),
@@ -142,5 +155,6 @@ mainForm.directive('yamlConfiguration', function(){
 });
 
 $(document).ready(function(){
-	$("#output").sticky({topSpacing:100});
+	$("#output").sticky({topSpacing:65});
+	new Clipboard('#copyButton');
 });

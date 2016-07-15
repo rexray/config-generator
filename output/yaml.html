@@ -1,94 +1,75 @@
-
 <p>
 <span ng-if="loggingLevelsData.selectedLoggingLevel.value != 'warn'">
-	rexray:<br>
-	&nbsp logLevel: {{loggingLevelsData.selectedLoggingLevel.value}}<br>
+rexray:<br>
+&nbsp logLevel: {{loggingLevelsData.selectedLoggingLevel.value}}<br>
 </span>
 libstorage:<br>
 <span ng-repeat="(k,v) in services[0] | emptyKvFilter" ng-if="k == 'libSmainLoggingLevel' && v != 'warn'">
-	&nbsp logging:
-	<br>
-	&nbsp&nbsp&nbsp level: {{v}}
-	<br>
+&nbsp logging:<br>
+&nbsp&nbsp&nbsp level: {{v}}<br>
 </span>
 
 &nbsp service: {{services[0].type}}<br>
 <span ng-repeat="(k,v) in services[0] | emptyKvFilter | kvFilter | noLogging | limitTo:1">
-		&nbsp integration:
-		<br>
-		&nbsp&nbsp&nbsp volume:
-		<br>
-		&nbsp&nbsp&nbsp&nbsp&nbsp operations:
-		<br>
+&nbsp integration:<br>
+&nbsp&nbsp&nbsp volume:<br>
+&nbsp&nbsp&nbsp&nbsp&nbsp operations:<br>
 </span>
 
 <span ng-repeat="(k,v) in services[0] | emptyKvFilter | kvFilter | multiStringFilter:'libSdisableCreate libStorageCreateSize' | limitTo:1">
-	&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp create: 
-	<br>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp create:<br>
 </span>
 
 <span ng-repeat="(k,v) in services[0] | emptyKvFilter" ng-if="k.substring(0,4) == 'libS'">
 	<span ng-if="k == 'libSdisableCreate' && v == true">
-		&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp disable: {{v}}
-		<br>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp disable: {{v}}<br>
 	</span>
 	<span ng-if="k == 'libStorageCreateSize' && v != ''">
-		&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp default:
-		<br>
-		&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp size: {{v}}
-		<br>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp default:<br>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp size: {{v}}<br>
 	</span>
 </span>
 
 <span ng-repeat="(k,v) in services[0] | emptyKvFilter | kvFilter | multiStringFilter:'libSenablePreemption libSrootPath' | limitTo:1">
-	&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp mount: 
-	<br>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp mount:<br>
 </span>
 
 <span ng-repeat="(k,v) in services[0] | emptyKvFilter" ng-if="k.substring(0,4) == 'libS'">
 	<span ng-if="k == 'libSenablePreemption' && v == true">
-		&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp preempt: {{v}}
-		<br>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp preempt: {{v}}<br>
 	</span>
 	<span ng-if="k == 'libSrootPath' && v != ''">
-		&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp rootPath: {{v}}
-		<br>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp rootPath: {{v}}<br>
 	</span>
 </span>
 
 <span ng-repeat="(k,v) in services[0] | emptyKvFilter" ng-if="k.substring(0,4) == 'libS'">
 	<span ng-if="k == 'libSdisableRemove' && v == true">
-		&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp remove: 
-		<br>
-		&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp disable: {{v}}
-		<br>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp remove:<br>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp disable: {{v}}<br>
 	</span>
 	<span ng-if="k == 'libSignoreUsedCount' && v == true">
-		&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp unmount: 
-		<br>
-		&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp ignoreUsedCount: {{v}}
-		<br>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp unmount: <br>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp ignoreUsedCount: {{v}}<br>
 	</span>
 </span>
 
 <span ng-repeat="(k,v) in services[0] | emptyKvFilter | kvFilter | multiStringFilter:'libSdisablePathCache libSdisablePathCacheAsync' | limitTo:1">
-	&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp path: 
-	<br>
-	&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp cache:
-	<br>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp path:<br>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp cache:<br>
 </span>
 
 <span ng-repeat="(k,v) in services[0] | emptyKvFilter" ng-if="k.substring(0,4) == 'libS'">
 	<span ng-if="k == 'libSdisablePathCache' && v == true">
-		&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp enabled: false
-		<br>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp enabled: false<br>
 	</span>
 	<span ng-if="k == 'libSdisablePathCacheAsync' && v == true">
-		&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp async: false
-		<br>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp async: false<br>
 	</span>
 </span>
  
 {{services[0].type}}:<br>
-<span ng-repeat="(k,v) in services[0] | emptyKvFilter" ng-if="$index > 1 && k.substring(0,4) != 'libS'">&nbsp {{k}}: {{v}}<br></span>
+<span ng-repeat="(k,v) in services[0] | emptyKvFilter" ng-if="$index > 1 && k.substring(0,4) != 'libS'">
+&nbsp {{k}}: {{v}}<br>
+</span>
 </p>

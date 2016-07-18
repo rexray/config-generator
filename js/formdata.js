@@ -49,7 +49,7 @@ mainForm.controller('AddServiceButtonController', ['$scope', '$rootScope', funct
 						$scope.services.push({
 							"id":newServiceNo,
 							"type": serviceType,
-							"endpoint": "http://127.0.0.1:18083",
+							"endpoint": "http://192.168.99.1:18083",
 							"tls": false,
 							"volumePath": "$HOME/VirtualBox/Volumes",
 							"controllerName": "SATA"

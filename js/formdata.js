@@ -51,7 +51,7 @@ mainForm.controller('AddServiceButtonController', ['$scope', '$rootScope', funct
 							"type": serviceType,
 							"endpoint": "http://192.168.99.1:18083",
 							"tls": false,
-							"volumePath": "$HOME/VirtualBox/Volumes",
+							"volumePath": "/Users/<your-name>/VirtualBox/Volumes",
 							"controllerName": "SATA"
 						});
 					} 

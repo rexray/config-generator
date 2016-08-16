@@ -1,0 +1,35 @@
+<!-- NEW ISILON FORM -->
+<br>
+<hr>
+<h4 class="text-center">AWS Elastic File System <a href="http://libstorage.readthedocs.io/en/stable/user-guide/storage-providers/#aws-efs" target="_blank"><span class="glyphicon glyphicon-link"></span></a></h4>
+<br>
+<div class="row">
+    <h5 class="text-center">Access & Credentials</h5>
+    <label for="awsEfsAccessKey" class="col-md-2 control-label" uib-popover="The accessKey and secretKey configuration parameters are optional and should be used when explicit AWS credentials configuration needs to be provided. EFS driver uses official golang AWS SDK library and supports all other ways of providing access credentials, like environment variables or instance profile IAM permissions." popover-trigger="mouseenter">Access Key:</label>
+    <div class="col-md-4">
+        <input type="text" id="awsEfsAccessKey" class="form-control" placeholder="ABCXYZ" ng-model="service.accessKey">
+    </div>
+
+    <label for="awsEfsSecretKey" class="col-md-2 control-label" uib-popover="The accessKey and secretKey configuration parameters are optional and should be used when explicit AWS credentials configuration needs to be provided. EFS driver uses official golang AWS SDK library and supports all other ways of providing access credentials, like environment variables or instance profile IAM permissions." popover-trigger="mouseenter">Secret Key:</label>
+    <div class="col-md-4">
+        <input type="text" id="awsEfsSecretKey" class="form-control" placeholder="DEF123" ng-model="service.secretKey">
+    </div>
+</div>
+<div class="row">
+    <label for="awsEfsSecurityGroups" class="col-md-2 control-label" uib-popover="securityGroups list of security groups attached to MountPoint instances. If no security groups are provided the default VPC security group is used." popover-trigger="mouseenter">Security Groups:</label>
+    <div class="col-md-4">
+        <input type="text" id="awsEfsSecurityGroups" class="form-control" placeholder="sg-XXXXXXX,sg-XXXXXX0,sg-XXXXXX1" ng-model="service.securityGroups">
+    </div>
+
+    <label for="AwsEfsRegion" class="col-md-2 control-label" uib-popover="region represents AWS region where should be EFS provisioned. See official AWS documentation for list of supported regions." popover-trigger="mouseenter">Region:</label>
+    <div class="col-md-4">
+        <input type="text" id="AwsEfsRegion" class="form-control" placeholder="us-east-1" ng-model="service.region">
+    </div>
+</div>
+<br>
+<div class="row">
+    <h5 class="text-center">Optional Storage Configurations</h5>
+    <label for="awsEfsTag" class="col-md-2 control-label" uib-popover="tag is used to partition multiple services within single AWS account and is used as prefix for EFS names in format [tagprefix]/volumeName" popover-trigger="mouseenter">Tag Prefix:</label>
+    <div class="col-md-4">
+        <input type="text" id="awsEfsTag" class="form-control" placeholder="cluster01" ng-model="service.tag">
+    </div>

@@ -1,6 +1,6 @@
 # REX-Ray Configuration Generator
 
-[http://rexrayconfig.emccode.com](http://rexrayconfig.emccode.com)
+[http://rexrayconfig.codedellemc.com](http://rexrayconfig.codedellemc.com)
 
 ## Description
 A dynamically create [REX-Ray configurations](http://rexray.readthedocs.io/en/latest/user-guide/config/) based upon form inputs.
@@ -16,10 +16,10 @@ At this time, only 1 service can be added and it's encouraged to validate using 
   - New service forms are added using the `/services` folder
 - Integrate pre-error checks for certain services where one value takes precedent over another. 
    - example. ScaleIO `System Name` vs `System ID`.
-- Add Modal/Tooltip/Popover for individual labels explaining what each means.
+- Add Modal/Tooltip/Popover for individual labels explaining what each means. [DONE]
   - This will cut down on the need to refer back to the documentation.
 - Add ability to have multiple services and utilize modules
-- Add libStorage Server configuration options
+- Add libStorage Server configuration options [1/2 Done]
 
 ## Contribution
 
@@ -31,4 +31,4 @@ Create a fork of the project into your own reposity. Make all your necessary cha
 rexray-config-generator is freely distributed under the [MIT License](http://github.com/kacole2/rexray-config-generator/LICENSE "LICENSE"). See LICENSE for details.
 
 ## Support
-Please file bugs and issues on the Github issues page for this project. This is to help keep track and document everything related to this repo. For general discussions and further support you can join the [EMC {code} Community slack channel](http://community.emccode.com/). The code and documentation are released with no warranties or SLAs and are intended to be supported through a community driven process.
+Please file bugs and issues on the Github issues page for this project. This is to help keep track and document everything related to this repo. For general discussions and further support you can join the [{code} Community slack channel](http://community.emccode.com/). The code and documentation are released with no warranties or SLAs and are intended to be supported through a community driven process.

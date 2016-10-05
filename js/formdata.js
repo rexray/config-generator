@@ -73,6 +73,14 @@ mainForm.controller('AddServiceButtonController', ['$scope', '$rootScope', funct
 			document.body.removeChild(element);
 		}
 		
+
+		$scope.copyOutput = function (element) {
+		    range = document.createRange();
+		    range.selectNode($(element)[0]);
+		    window.getSelection().addRange(range);
+		    document.execCommand('copy');
+		}
+
 		/* NOT USED YET
 		$scope.removeService = function() {
 			var lastItem = $scope.choices.length-1;

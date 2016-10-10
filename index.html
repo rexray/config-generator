@@ -108,6 +108,10 @@
                                         <div id="awsEfsServiceForm" ng-repeat="service in services" ng-show="service.type == 'efs'" ng-include="'services/efs.html'">
                                         </div>
 
+                                        <!-- AWS EBS -->
+                                        <div id="awsEbsServiceForm" ng-repeat="service in services" ng-show="service.type == 'ebs'" ng-include="'services/ebs.html'">
+                                        </div>
+
                                         <!-- LIBSTORAGE OPTIONS FORM -->
                                         <div id="libStorageServiceForm" ng-repeat="service in services" ng-show="service.type" ng-include="'services/libstorage.html'">
                                         </div>

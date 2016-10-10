@@ -1,0 +1,24 @@
+<!-- NEW EBS FORM -->
+<br>
+<hr>
+<h4 class="text-center">AWS Elastic Block Storage <a href="http://libstorage.readthedocs.io/en/stable/user-guide/storage-providers/#aws-ebs" target="_blank"><span class="glyphicon glyphicon-link"></span></a></h4>
+<br>
+<div class="row">
+    <h5 class="text-center">Access & Credentials</h5>
+    <label for="awsEbsAccessKey" class="col-md-2 control-label" uib-popover="The accessKey and secretKey configuration parameters are optional and should be used when explicit AWS credentials configuration needs to be provided. EBS driver uses official golang AWS SDK library and supports all other ways of providing access credentials, like environment variables or instance profile IAM permissions." popover-trigger="mouseenter">Access Key:</label>
+    <div class="col-md-4">
+        <input type="text" id="awsEbsAccessKey" class="form-control" placeholder="ABCXYZ" ng-model="service.accessKey">
+    </div>
+
+    <label for="awsEbsSecretKey" class="col-md-2 control-label" uib-popover="The accessKey and secretKey configuration parameters are optional and should be used when explicit AWS credentials configuration needs to be provided. EBS driver uses official golang AWS SDK library and supports all other ways of providing access credentials, like environment variables or instance profile IAM permissions." popover-trigger="mouseenter">Secret Key:</label>
+    <div class="col-md-4">
+        <input type="text" id="awsEbsSecretKey" class="form-control" placeholder="DEF123" ng-model="service.secretKey">
+    </div>
+</div>
+<div class="row">
+    <label for="AwsEbsRegion" class="col-md-2 control-label" uib-popover="region represents the AWS region where  EBS is provisioned. See official AWS documentation for list of supported regions." popover-trigger="mouseenter">Region:</label>
+    <div class="col-md-4">
+        <input type="text" id="AwsEbsRegion" class="form-control" placeholder="us-east-1" ng-model="service.region">
+    </div>
+</div>
+<br>

@@ -16,6 +16,7 @@ mainForm.controller('AddServiceController', ['$scope', function($scope){
 	$scope.serviceData = {
 		serviceRepeatSelect: null,
   		serviceOptions: [
+			{value: 'ebs', label: 'AWS Elastic Block Store'},
 			{value: 'efs', label: 'AWS Elastic File System'},
 			{value: 'scaleio', label: 'EMC ScaleIO'},
 			{value: 'isilon', label: 'EMC Isilon'},
@@ -41,7 +42,7 @@ mainForm.controller('AddServiceButtonController', ['$scope', '$rootScope', funct
 							"insecure" : true,
 							"thinOrThick" : "ThinProvisioned"
 						});
-					} else if (serviceType == 'isilon' || serviceType == 'efs'){
+					} else if (serviceType == 'isilon' || serviceType == 'efs' || serviceType == 'ebs'){
 						$scope.services.push({
 							"id":newServiceNo,
 							"type": serviceType

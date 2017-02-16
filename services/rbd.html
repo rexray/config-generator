@@ -1,0 +1,13 @@
+<!-- NEW Ceph RBD FORM -->
+<br>
+<hr>
+<h4 class="text-center">Ceph RBD <a href="http://libstorage.readthedocs.io/en/stable/user-guide/storage-providers/#ceph-rbd" target="_blank"><span class="glyphicon glyphicon-link"></span></a></h4>
+<br>
+<div class="row">
+    <h5 class="text-center">Pool Name</h5>
+    <label for="cephRbdDefaultPool" class="col-md-2 control-label" uib-popover="The defaultPool parameter is optional, and defaults to 'rbd'. When set, all volume requests that do not reference a specific pool will use the defaultPool value as the destination storage pool." popover-trigger="mouseenter">Default Pool:</label>
+    <div class="col-md-4">
+        <input type="text" id="cephRbdDefaultPool" class="form-control" placeholder="rbd" ng-model="service.defaultPool">
+    </div>
+</div>
+<br>

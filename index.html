@@ -63,10 +63,11 @@
                 <div ng-controller="AddServiceController">
                     <div ng-controller="AddServiceButtonController">
                         <div class="col-md-6">
+                            <h4>Step 1: Download REX-Ray <h6 class="yamlbox">$ curl -sSL https://dl.bintray.com/emccode/rexray/install | sh</h6></h4>
                             <form class="form-horizontal">
                                 <fieldset>
                                     <!-- Form Name -->
-                                    <legend><h4>Step 1: Create the configuration</h4></legend>
+                                    <legend><h4>Step 2: Create the configuration</h4></legend>
 
                                     <!-- GLOBAL LOGGING LEVEL DROPDOWN -->
                                     <div class="form-group">
@@ -112,6 +113,10 @@
                                         <div id="awsEbsServiceForm" ng-repeat="service in services" ng-show="service.type == 'ebs'" ng-include="'services/ebs.html'">
                                         </div>
 
+                                        <!-- Ceph RBD -->
+                                        <div id="cephRbdServiceForm" ng-repeat="service in services" ng-show="service.type == 'rbd'" ng-include="'services/rbd.html'">
+                                        </div>
+
                                         <!-- LIBSTORAGE OPTIONS FORM -->
                                         <div id="libStorageServiceForm" ng-repeat="service in services" ng-show="service.type" ng-include="'services/libstorage.html'">
                                         </div>
@@ -133,8 +138,8 @@
                                 <p><small><em>hint: hover over labels to get more information about individual options</em></small><button ng-click="downloadOutput('#yamlconfig')" class="btn btn-success">download</button><button ng-click="copyOutput('#yamlconfig')" class="btn btn-success">copy</button></p>
                             </div>
                             <br>
-                            <h4>Step 2: Place the file at <h4 class="yamlbox">/etc/rexray/config.yml</h4></h4>
-                            <h4>Step 3: Run as a service <h4 class="yamlbox">$ rexray start</h4></h4>
+                            <h4>Step 3: Place the file at <h4 class="yamlbox">/etc/rexray/config.yml</h4></h4>
+                            <h4>Step 4: Run as a service <h4 class="yamlbox">$ rexray start</h4></h4>
                         </div>
                     </div>
                 </div>

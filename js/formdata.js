@@ -18,6 +18,7 @@ mainForm.controller('AddServiceController', ['$scope', function($scope){
   		serviceOptions: [
 			{value: 'ebs', label: 'AWS Elastic Block Store'},
 			{value: 'efs', label: 'AWS Elastic File System'},
+			{value: 'rbd', label: 'Ceph RADOS Block Devices'},
 			{value: 'scaleio', label: 'EMC ScaleIO'},
 			{value: 'isilon', label: 'EMC Isilon'},
 			{value: 'virtualbox', label: 'Oracle VirtualBox'}
@@ -30,7 +31,7 @@ mainForm.controller('AddServiceButtonController', ['$scope', '$rootScope', funct
   
 		$scope.addNewService = function() {
 			if ($scope.services.length >= 1){
-				alert('Only 1 Service Supported At This Time.');
+				alert('This generator only supports 1 service at this time. View the modules examples in the documentation to learn how to support multiple services.');
 			} else {
 				var serviceType = $scope.$parent.serviceData.serviceRepeatSelect
 				if ( serviceType !== null) {
@@ -42,7 +43,7 @@ mainForm.controller('AddServiceButtonController', ['$scope', '$rootScope', funct
 							"insecure" : true,
 							"thinOrThick" : "ThinProvisioned"
 						});
-					} else if (serviceType == 'isilon' || serviceType == 'efs' || serviceType == 'ebs'){
+					} else if (serviceType == 'isilon' || serviceType == 'efs' || serviceType == 'ebs' || serviceType == 'rbd'){
 						$scope.services.push({
 							"id":newServiceNo,
 							"type": serviceType

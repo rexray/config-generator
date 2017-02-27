@@ -1,0 +1,67 @@
+<!-- NEW Azure FORM -->
+<br>
+<hr>
+<h4 class="text-center">Microsoft Azure Unmanaged Disk <a href="http://libstorage.readthedocs.io/en/stable/user-guide/storage-providers/#microsoft" target="_blank"><span class="glyphicon glyphicon-link"></span></a></h4>
+<br>
+<div class="row">
+    <h5 class="text-center">Required Access & Credentials</h5>
+    <label for="azureSubscriptionID" class="col-md-3 control-label" uib-popover="subscriptionID is required, and is the UUID of your Azure subscription." popover-trigger="mouseenter">Subscription ID:</label>
+    <div class="col-md-9">
+        <input type="text" id="azureSubscriptionID" class="form-control" placeholder="abcdef01-2345-6789-abcd-ef0123456789" ng-model="service.subscriptionID">
+    </div>
+</div>
+<div class="row">
+    <label for="azureResourceGroup" class="col-md-3 control-label" uib-popover="resourceGroup is required, and is the name of the resource group for your VMs and storage." popover-trigger="mouseenter">Resource Group:</label>
+    <div class="col-md-9">
+        <input type="text" id="azureResourceGroup" class="form-control" placeholder="testgroup" ng-model="service.resourceGroup">
+    </div>
+</div>
+<div class="row">
+    <label for="azureTenantID" class="col-md-3 control-label" uib-popover="tenantID is required, and is either the domain or UUID for your active directory account within Azure." popover-trigger="mouseenter">Tenant ID:</label>
+    <div class="col-md-9">
+        <input type="text" id="azureTenantID" class="form-control" placeholder="usernamehotmail.onmicrosoft.com" ng-model="service.tenantID">
+    </div>
+</div>
+<div class="row">
+    <label for="azureStorageAccount" class="col-md-3 control-label" uib-popover="storageAccount is required, and is the name of the storage account where your disks will be created." popover-trigger="mouseenter">Storage Account:</label>
+    <div class="col-md-9">
+        <input type="text" id="azureStorageAccount" class="form-control" placeholder="username" ng-model="service.storageAccount">
+    </div>
+</div>
+<div class="row">
+    <label for="azureStorageAccessKey" class="col-md-3 control-label" uib-popover="storageAccessKey is required, and is a valid access key associated with the storageAccount." popover-trigger="mouseenter">Storage Access Key:</label>
+    <div class="col-md-9">
+        <input type="text" id="azureStorageAccessKey" class="form-control" placeholder="XXXXXXXXX" ng-model="service.storageAccessKey">
+    </div>
+</div>
+<div class="row">
+    <label for="azureClientID" class="col-md-3 control-label" uib-popover="clientID is required, and is the UUID of your client, which was created as an App Registration within your Azure active directory account." popover-trigger="mouseenter">Client ID:</label>
+    <div class="col-md-9">
+        <input type="text" id="azureClientID" class="form-control" placeholder="123def01-2345-6789-abcd-ef0123456789" ng-model="service.clientID">
+    </div>
+</div>
+<div class="row">
+    <h5 class="text-center">Client Secret or CertPath is Required</h5>
+    <label for="azureClientSecret" class="col-md-2 control-label" uib-popover="is required if certPath is not provided instead. It is a valid access key associated with clientID, and is managed as part of the App Registration." popover-trigger="mouseenter">Client Secret:</label>
+    <div class="col-md-4">
+        <input type="text" id="azureClientSecret" class="form-control" placeholder="XXXXXXXXX" ng-model="service.clientSecret">
+    </div>
+
+    <label for="azureCertPath" class="col-md-2 control-label" uib-popover="certPath is an alternative to clientSecret, contains the location of a PKCS encoded RSA private key associated with clientID." popover-trigger="mouseenter">Certificate Path:</label>
+    <div class="col-md-4">
+        <input type="text" id="azureCertPath" class="form-control" placeholder="/folder/location" ng-model="service.certPath">
+    </div>
+</div>
+<div class="row">
+    <h5 class="text-center">Optional Settings</h5>
+    <label for="azureContainer" class="col-md-2 control-label" uib-popover="container is optional, and specifies the name of an existing container within storageAccount. This container must already exist and is not created automatically." popover-trigger="mouseenter">Name of an Existing Container:</label>
+    <div class="col-md-4">
+        <input type="text" id="azureContainer" class="form-control" placeholder="vhds" ng-model="service.container">
+    </div>
+
+    <label for="azureUseHTTPS" class="col-md-2 control-label" uib-popover="useHTTPS is optional, and is a boolean value on whether to use HTTPS when communicating with the Azure storage endpoint." popover-trigger="mouseenter">Disable HTTPS:</label>
+    <div class="col-md-4">
+        <input type="checkbox" name="azureUseHTTPS" id="azureUseHTTPS" class="form-control" ng-model="service.useHTTPS">
+    </div>
+</div>
+<br>

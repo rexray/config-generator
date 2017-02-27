@@ -21,4 +21,13 @@
         <input type="text" id="AwsEbsRegion" class="form-control" placeholder="us-east-1" ng-model="service.region">
     </div>
 </div>
+<div class="row">
+    <h5 class="text-center">Security and Encryption</h5>
+    <label for="AwsEbsKmsKey" class="col-md-2 control-label" uib-popover="If the kmsKeyID field is specified it will be used as the encryption key for all volumes that are created with a truthy encryption request field." popover-trigger="mouseenter">KMS Key ID:</label>
+    <div class="col-md-8">
+        <input type="text" id="AwsEbsKmsKey" class="form-control" placeholder="abcd1234-a123-456a-a12b-a123b4cd56ef
+" ng-model="service.kmsKeyID">
+    </div>
+</div>
+
 <br>

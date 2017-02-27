@@ -70,6 +70,11 @@ libstorage:<br>
  
 {{services[0].type}}:<br>
 <span ng-repeat="(k,v) in services[0] | emptyKvFilter" ng-if="$index > 1 && k.substring(0,4) != 'libS'">
+	<span ng-if="k == 'useHTTPS' && v == true">
+&nbsp {{k}}: false<br>
+	</span>
+	<span ng-if="k != 'useHTTPS'">
 &nbsp {{k}}: {{v}}<br>
+	</span>
 </span>
 </p>

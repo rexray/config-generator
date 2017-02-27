@@ -18,9 +18,14 @@ mainForm.controller('AddServiceController', ['$scope', function($scope){
   		serviceOptions: [
 			{value: 'ebs', label: 'AWS Elastic Block Store'},
 			{value: 'efs', label: 'AWS Elastic File System'},
+			{value: 's3fs', label: 'AWS Simple Storage Service S3FS'},
 			{value: 'rbd', label: 'Ceph RADOS Block Devices'},
-			{value: 'scaleio', label: 'EMC ScaleIO'},
-			{value: 'isilon', label: 'EMC Isilon'},
+			{value: 'scaleio', label: 'Dell EMC ScaleIO'},
+			{value: 'isilon', label: 'Dell EMC Isilon'},
+			{value: 'dobs', label: 'Digital Ocean Block Storage'},
+			{value: 'fittedcloud', label: 'Fitted Cloud EBS Optimizer'},
+			{value: 'gcepd', label: 'Google Compute Engine Persistent Disk'},
+			{value: 'azureud', label: 'Microsoft Azure Unmanaged Disk'},
 			{value: 'virtualbox', label: 'Oracle VirtualBox'}
 		]
   	 };
@@ -43,7 +48,7 @@ mainForm.controller('AddServiceButtonController', ['$scope', '$rootScope', funct
 							"insecure" : true,
 							"thinOrThick" : "ThinProvisioned"
 						});
-					} else if (serviceType == 'isilon' || serviceType == 'efs' || serviceType == 'ebs' || serviceType == 'rbd'){
+					} else if (serviceType == 'isilon' || serviceType == 'efs' || serviceType == 'ebs' || serviceType == 'rbd' || serviceType == 'dobs' || serviceType == 'fittedcloud' || serviceType == 'gcepd' || serviceType == 'azureud' || serviceType == 's3fs'){
 						$scope.services.push({
 							"id":newServiceNo,
 							"type": serviceType

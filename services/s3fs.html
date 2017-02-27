@@ -1,0 +1,31 @@
+<!-- NEW S3FUSE FORM -->
+<br>
+<hr>
+<h4 class="text-center">AWS Simple Storage Service S3FUSE <a href="http://libstorage.readthedocs.io/en/stable/user-guide/storage-providers/#simple-storage-service" target="_blank"><span class="glyphicon glyphicon-link"></span></a></h4>
+<br>
+<div class="row">
+    <h5 class="text-center">Access & Credentials</h5>
+    <label for="s3fsAccessKey" class="col-md-2 control-label" uib-popover="The accessKey and secretKey configuration parameters are optional and should be used when explicit AWS credentials configuration needs to be provided. The S3FS driver uses the official Golang AWS SDK library and supports all other ways of providing access credentials, like environment variables or instance profile IAM permissions." popover-trigger="mouseenter">Access Key:</label>
+    <div class="col-md-4">
+        <input type="text" id="s3fsAccessKey" class="form-control" placeholder="ABCXYZ" ng-model="service.accessKey">
+    </div>
+
+    <label for="s3fsSecretKey" class="col-md-2 control-label" uib-popover="The accessKey and secretKey configuration parameters are optional and should be used when explicit AWS credentials configuration needs to be provided. The S3FS driver uses the official Golang AWS SDK library and supports all other ways of providing access credentials, like environment variables or instance profile IAM permissions." popover-trigger="mouseenter">Secret Key:</label>
+    <div class="col-md-4">
+        <input type="text" id="s3fsSecretKey" class="form-control" placeholder="DEF123" ng-model="service.secretKey">
+    </div>
+</div>
+<div class="row">
+    <label for="s3fsRegion" class="col-md-2 control-label" uib-popover="region represents the AWS region where EFS is provisioned. See official AWS documentation for list of supported regions." popover-trigger="mouseenter">Region:</label>
+    <div class="col-md-4">
+        <input type="text" id="s3fsRegion" class="form-control" placeholder="us-east-1" ng-model="service.region">
+    </div>
+</div>
+<div class="row">
+    <h5 class="text-center">Optional Storage Configurations</h5>
+    <label for="s3fsDisablePathStyle" class="col-md-2 control-label" uib-popover="The disablePathStyle property disables the use of the path style for bucket endpoints. The path style is more stable with regards to regions than bucket URI FQDNs, but the path style is also less performant." popover-trigger="mouseenter">Disable Path Style:</label>
+    <div class="col-md-4">
+        <input type="checkbox" name="s3fsDisablePathStyle" id="s3fsDisablePathStyle" ng-model="service.disablePathStyle">
+    </div>
+</div>
+<br>

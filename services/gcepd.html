@@ -1,0 +1,30 @@
+<!-- NEW GCE FORM -->
+<br>
+<hr>
+<h4 class="text-center">Google Compute Engine Persistent Disk <a href="http://libstorage.readthedocs.io/en/stable/user-guide/storage-providers/#google" target="_blank"><span class="glyphicon glyphicon-link"></span></a></h4>
+<br>
+<div class="row">
+    <h5 class="text-center">Optional Access & Credentials</h5>
+    <label for="gceKeyfile" class="col-md-2 control-label" uib-popover="The keyfile parameter is optional. It specifies a path on disk to a file containing the JSON-encoded Service Account credentials. This file can be downloaded from the GCE web portal. If keyfile is specified, the GCE instance's service account is not considered, and is not necessary. If keyfile is not specified, the application will try to lookup application default credentials." popover-trigger="mouseenter">Key File:</label>
+    <div class="col-md-4">
+        <input type="text" id="gceKeyfile" class="form-control" placeholder="/etc/gcekey.json" ng-model="service.keyfile">
+    </div>
+
+    <label for="gceZone" class="col-md-2 control-label" uib-popover="The zone parameter is optional, and configures the driver to only allow access to the given zone. Creating and listing disks from other zones will be denied. If a zone is not specified, the zone from the client Instance ID will be used when creating new disks." popover-trigger="mouseenter">Secret Key:</label>
+    <div class="col-md-4">
+        <input type="text" id="gceZone" class="form-control" placeholder="us-west1-b" ng-model="service.zone">
+    </div>
+</div>
+<div class="row">
+    <h5 class="text-center">Optional Settings</h5>
+    <label for="gceDefaultDiskType" class="col-md-2 control-label" uib-popover="The defaultDiskType parameter is optional and specifies what type of disk to create, either pd-standard or pd-ssd. When not specified, the default is pd-ssd." popover-trigger="mouseenter">Default Disk Type:</label>
+    <div class="col-md-4">
+        <input type="text" id="gceDefaultDiskType" class="form-control" placeholder="pd-ssd" ng-model="service.defaultDiskType">
+    </div>
+
+    <label for="gceTag" class="col-md-2 control-label" uib-popover="The tag parameter is optional, and causes the driver to create or return disks that have a matching tag. The tag is implemented by using the GCE label functionality available in the beta API. The value of the tag parameter is used as the value for a label with the key libstoragetag. Use of this parameter is encouraged, as the driver will only return volumes that have been created by the driver, which is most useful to eliminate listing the boot disks of every GCE disk in your project/zone. If you wish to 'expose' previously created disks to the GCEPD driver, you can edit the labels on the existing disk to have a key of libstoragetag and a value matching that given in tag." popover-trigger="mouseenter">Tag:</label>
+    <div class="col-md-4">
+        <input type="text" id="gceTag" class="form-control" placeholder="pd-ssd" ng-model="service.tag">
+    </div>
+</div>
+<br>

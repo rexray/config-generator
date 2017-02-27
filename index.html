@@ -113,8 +113,28 @@
                                         <div id="awsEbsServiceForm" ng-repeat="service in services" ng-show="service.type == 'ebs'" ng-include="'services/ebs.html'">
                                         </div>
 
+                                         <!-- AWS S3FS -->
+                                        <div id="s3fsServiceForm" ng-repeat="service in services" ng-show="service.type == 's3fs'" ng-include="'services/s3fs.html'">
+                                        </div>
+
                                         <!-- Ceph RBD -->
                                         <div id="cephRbdServiceForm" ng-repeat="service in services" ng-show="service.type == 'rbd'" ng-include="'services/rbd.html'">
+                                        </div>
+
+                                        <!-- Digital Ocean -->
+                                        <div id="dobsServiceForm" ng-repeat="service in services" ng-show="service.type == 'dobs'" ng-include="'services/dobs.html'">
+                                        </div>
+
+                                        <!-- Fitted Cloud -->
+                                        <div id="fittedcloudServiceForm" ng-repeat="service in services" ng-show="service.type == 'fittedcloud'" ng-include="'services/fittedcloud.html'">
+                                        </div>
+
+                                        <!-- Google Compute Engine -->
+                                        <div id="gcepdServiceForm" ng-repeat="service in services" ng-show="service.type == 'gcepd'" ng-include="'services/gcepd.html'">
+                                        </div>
+
+                                        <!-- Azure -->
+                                        <div id="azureudServiceForm" ng-repeat="service in services" ng-show="service.type == 'azureud'" ng-include="'services/azureud.html'">
                                         </div>
 
                                         <!-- LIBSTORAGE OPTIONS FORM -->
@@ -150,7 +170,7 @@
         <br>
         <br>
             <footer class="footer pull-right">
-                    <p>&copy; 2016 EMC {code} | <img src="images/angular.png" width="20px"></p>
+                    <p>&copy; 2017 {code} by Dell EMC | <img src="images/angular.png" width="20px"></p>
             </footer>
         </div>
     </div>

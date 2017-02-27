@@ -1,0 +1,32 @@
+<!-- NEW FittedCloud FORM -->
+<br>
+<hr>
+<h4 class="text-center">Fitted Cloud EBS Optimizer <a href="http://libstorage.readthedocs.io/en/stable/user-guide/storage-providers/#aws-ebs" target="_blank"><span class="glyphicon glyphicon-link"></span></a></h4>
+<br>
+<div class="row">
+    <h5 class="text-center">Access & Credentials</h5>
+    <label for="fcawsEbsAccessKey" class="col-md-2 control-label" uib-popover="The accessKey and secretKey configuration parameters are optional and should be used when explicit AWS credentials configuration needs to be provided. EBS driver uses official golang AWS SDK library and supports all other ways of providing access credentials, like environment variables or instance profile IAM permissions." popover-trigger="mouseenter">Access Key:</label>
+    <div class="col-md-4">
+        <input type="text" id="fcawsEbsAccessKey" class="form-control" placeholder="ABCXYZ" ng-model="service.accessKey">
+    </div>
+
+    <label for="fcawsEbsSecretKey" class="col-md-2 control-label" uib-popover="The accessKey and secretKey configuration parameters are optional and should be used when explicit AWS credentials configuration needs to be provided. EBS driver uses official golang AWS SDK library and supports all other ways of providing access credentials, like environment variables or instance profile IAM permissions." popover-trigger="mouseenter">Secret Key:</label>
+    <div class="col-md-4">
+        <input type="text" id="fcawsEbsSecretKey" class="form-control" placeholder="DEF123" ng-model="service.secretKey">
+    </div>
+</div>
+<div class="row">
+    <label for="fcAwsEbsRegion" class="col-md-2 control-label" uib-popover="region represents the AWS region where  EBS is provisioned. See official AWS documentation for list of supported regions." popover-trigger="mouseenter">Region:</label>
+    <div class="col-md-4">
+        <input type="text" id="fcAwsEbsRegion" class="form-control" placeholder="us-east-1" ng-model="service.region">
+    </div>
+</div>
+<div class="row">
+    <h5 class="text-center">Security and Encryption</h5>
+        <label for="fcAwsEbsKmsKey" class="col-md-2 control-label" uib-popover="If the kmsKeyID field is specified it will be used as the encryption key for all volumes that are created with a truthy encryption request field." popover-trigger="mouseenter">KMS Key ID:</label>
+    <div class="col-md-8">
+        <input type="text" id="fcAwsEbsKmsKey" class="form-control" placeholder="abcd1234-a123-456a-a12b-a123b4cd56ef
+" ng-model="service.kmsKeyID">
+    </div>
+</div>
+<br>

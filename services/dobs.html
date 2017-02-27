@@ -1,0 +1,19 @@
+<!-- NEW DGO Block Storage FORM -->
+<br>
+<hr>
+<h4 class="text-center">Digital Ocean Block Storage <a href="http://libstorage.readthedocs.io/en/stable/user-guide/storage-providers/digitalocean" target="_blank"><span class="glyphicon glyphicon-link"></span></a></h4>
+<br>
+<div class="row">
+    <h5 class="text-center">Access & Credentials</h5>
+    <label for="dobsToken" class="col-md-2 control-label" uib-popover="The DigitalOcean Block Storage driver currently only supports operating in local only mode where the libStorage server must be running on the same host as the client. The standard environment variable for the DigitalOcean access token is DIGITALOCEAN_ACCESS_TOKEN. However, the environment variable mapped to this driver's dobs.token property is DOBS_TOKEN. This choice was made to ensure that the driver must be explicitly configured for access instead of detecting a default token that may not be intended for the driver." popover-trigger="mouseenter">Token:</label>
+    <div class="col-md-4">
+        <input type="text" id="dobsToken" class="form-control" placeholder="123456" ng-model="service.token">
+    </div>
+</div>
+<div class="row">
+    <h5 class="text-center">Region</h5>
+    <label for="dobsRegion" class="col-md-2 control-label" uib-popover="region represents the Digital Ocean region where dobs is provisioned" popover-trigger="mouseenter">Region:</label>
+    <div class="col-md-4">
+        <input type="text" id="dobsRegion" class="form-control" placeholder="nyc1" ng-model="service.region">
+    </div>
+</div>

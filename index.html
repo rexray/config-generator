@@ -136,6 +136,10 @@
                                         <div id="azureudServiceForm" ng-repeat="service in services" ng-show="service.type == 'azureud'" ng-include="'services/azureud.html'">
                                         </div>
 
+                                        <!-- OpenStack Cinder -->
+                                        <div id="cinderServiceForm" ng-repeat="service in services" ng-show="service.type == 'cinder'" ng-include="'services/cinder.html'">
+                                        </div>
+
                                         <!-- LIBSTORAGE OPTIONS FORM -->
                                         <div id="libStorageServiceForm" ng-repeat="service in services" ng-show="service.type" ng-include="'services/libstorage.html'">
                                         </div>

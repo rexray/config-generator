@@ -1,0 +1,63 @@
+<!-- NEW S3FUSE FORM -->
+<br>
+<hr>
+<h4 class="text-center">OpenStack Cinder <a href="http://libstorage.readthedocs.io/en/stable/user-guide/storage-providers/#openstack" target="_blank"><span class="glyphicon glyphicon-link"></span></a></h4>
+<br>
+<div class="row">
+    <h5 class="text-center">Access & Credentials</h5>
+    <label for="cinderAuthURL" class="col-md-2 control-label" uib-popover="https://keystoneHost:35357/v2.0/" popover-trigger="mouseenter">Auth URL:</label>
+    <div class="col-md-4">
+        <input type="text" id="cinderAuthURL" class="form-control" placeholder="https://domain.com/openstack" ng-model="service.authURL">
+    </div>
+</div>
+<br>
+<div class="row">
+    <label for="cinderUserName" class="col-md-2 control-label" uib-popover="myusername" popover-trigger="mouseenter">UserName:</label>
+    <div class="col-md-4">
+        <input type="text" id="cinderUserName" class="form-control" placeholder="myusername" ng-model="service.userName">
+    </div>
+
+    <label for="cinderPassword" class="col-md-2 control-label" uib-popover="mypassword" popover-trigger="mouseenter">Password:</label>
+    <div class="col-md-4">
+        <input type="text" id="cinderPassword" class="form-control" placeholder="mypassword" ng-model="service.password">
+    </div>
+</div>
+<div class="row">
+    <label for="cinderUserID" class="col-md-2 control-label" uib-popover="0" popover-trigger="mouseenter">User ID:</label>
+    <div class="col-md-4">
+        <input type="text" id="cinderUserID" class="form-control" placeholder="0" ng-model="service.userID">
+    </div>
+</div>
+<br>
+<div class="row">
+    <label for="cinderTenantName" class="col-md-2 control-label" uib-popover="customer" popover-trigger="mouseenter">Tenant Name:</label>
+    <div class="col-md-4">
+        <input type="text" id="cinderTenantName" class="form-control" placeholder="customer" ng-model="service.tenantName">
+    </div>
+    <label for="cinderTenantID" class="col-md-2 control-label" uib-popover="0" popover-trigger="mouseenter">Tenant ID:</label>
+    <div class="col-md-4">
+        <input type="text" id="cinderTenantID" class="form-control" placeholder="0" ng-model="service.tenantID">
+    </div>
+</div>
+<div class="row">
+    <label for="cinderDomainName" class="col-md-2 control-label" uib-popover="corp" popover-trigger="mouseenter">Domain Name:</label>
+    <div class="col-md-4">
+        <input type="text" id="cinderDomainName" class="form-control" placeholder="corp" ng-model="service.domainName">
+    </div>
+    <label for="cinderDomainID" class="col-md-2 control-label" uib-popover="0" popover-trigger="mouseenter">Domain ID:</label>
+    <div class="col-md-4">
+        <input type="text" id="cinderDomainID" class="form-control" placeholder="0" ng-model="service.domainID">
+    </div>
+</div>
+<div class="row">
+    <h5 class="text-center">Optional Configurations</h5>
+    <label for="cinderRegionName" class="col-md-2 control-label" uib-popover="regionName is optional, it should be empty if you only have one region." popover-trigger="mouseenter">Region Name:</label>
+    <div class="col-md-4">
+        <input type="text" id="cinderRegionName" class="form-control" placeholder="USNW" ng-model="service.regionName">
+    </div>
+    <label for="cinderAvailabilityZoneName" class="col-md-2 control-label" uib-popover="availabilityZoneName is optional, the volume will be created in the default availability zone if not specified." popover-trigger="mouseenter">Availability Zone Name:</label>
+    <div class="col-md-4">
+        <input type="text" id="cinderAvailabilityZoneName" class="form-control" placeholder="Gold" ng-model="service.availabilityZoneName">
+    </div>
+</div>
+<br>

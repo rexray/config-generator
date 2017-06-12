@@ -26,6 +26,7 @@ mainForm.controller('AddServiceController', ['$scope', function($scope){
 			{value: 'fittedcloud', label: 'Fitted Cloud EBS Optimizer'},
 			{value: 'gcepd', label: 'Google Compute Engine Persistent Disk'},
 			{value: 'azureud', label: 'Microsoft Azure Unmanaged Disk'},
+			{value: 'cinder', label: 'OpenStack Cinder'},
 			{value: 'virtualbox', label: 'Oracle VirtualBox'}
 		]
   	 };
@@ -48,7 +49,7 @@ mainForm.controller('AddServiceButtonController', ['$scope', '$rootScope', funct
 							"insecure" : true,
 							"thinOrThick" : "ThinProvisioned"
 						});
-					} else if (serviceType == 'isilon' || serviceType == 'efs' || serviceType == 'ebs' || serviceType == 'rbd' || serviceType == 'dobs' || serviceType == 'fittedcloud' || serviceType == 'gcepd' || serviceType == 'azureud' || serviceType == 's3fs'){
+					} else if (serviceType == 'isilon' || serviceType == 'efs' || serviceType == 'ebs' || serviceType == 'rbd' || serviceType == 'dobs' || serviceType == 'fittedcloud' || serviceType == 'gcepd' || serviceType == 'azureud' || serviceType == 's3fs' || serviceType == 'cinder'){
 						$scope.services.push({
 							"id":newServiceNo,
 							"type": serviceType

@@ -1,6 +1,6 @@
 # REX-Ray Configuration Generator
 
-[http://rexrayconfig.codedellemc.com](http://rexrayconfig.codedellemc.com)
+[http://rexrayconfig.thecodeteam.com](http://rexrayconfig.thecodeteam.com)
 
 ## Description
 A dynamically create [REX-Ray configurations](http://rexray.readthedocs.io/en/latest/user-guide/config/) based upon form inputs.
@@ -12,7 +12,7 @@ At this time, only 1 service can be added and it's encouraged to validate using 
 
 ## Future
 
-- Add new service types as they are introduced in v0.4.X. 
+- Add new service types as they are introduced in v0.10.X. 
   - New service forms are added using the `/services` folder
 - Integrate pre-error checks for certain services where one value takes precedent over another. 
    - example. ScaleIO `System Name` vs `System ID`.
@@ -31,4 +31,8 @@ Create a fork of the project into your own reposity. Make all your necessary cha
 rexray-config-generator is freely distributed under the [MIT License](http://github.com/kacole2/rexray-config-generator/LICENSE "LICENSE"). See LICENSE for details.
 
 ## Support
-Please file bugs and issues on the Github issues page for this project. This is to help keep track and document everything related to this repo. For general discussions and further support you can join the [{code} Community slack channel](http://community.emccode.com/). The code and documentation are released with no warranties or SLAs and are intended to be supported through a community driven process.
+Please file bugs and issues on the Github issues page for this project. This is
+to help keep track and document everything related to this repo. For general
+discussions and further support you can join the [{code} Community slack
+channel](http://community.thecodeteam.com/). The code and documentation are
+released with no warranties or SLAs and are intended to be supported through a community driven process.

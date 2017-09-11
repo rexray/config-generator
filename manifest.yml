@@ -4,5 +4,5 @@ applications:
   memory: 128M
   instances: 1
   path: .
-  domain: emccode.com
+  domain: thecodeteam.com
   buildpack: staticfile_buildpack

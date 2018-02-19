@@ -27,9 +27,6 @@ To do local development, utilize `python -m SimpleHTTPServer`.
 
 Create a fork of the project into your own reposity. Make all your necessary changes and create a pull request with a description on what was added or removed and details explaining the changes in lines of code. If approved, project owners will merge it
 
-## Licensing
-rexray-config-generator is freely distributed under the [MIT License](http://github.com/kacole2/rexray-config-generator/LICENSE "LICENSE"). See LICENSE for details.
-
 ## Support
 Please file bugs and issues on the Github issues page for this project. This is
 to help keep track and document everything related to this repo. For general

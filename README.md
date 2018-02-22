@@ -1,6 +1,6 @@
 # REX-Ray Configuration Generator
 
-[http://rexrayconfig.thecodeteam.com](http://rexrayconfig.thecodeteam.com)
+[http://rexrayconfig.cfapps.io](http://rexrayconfig.cfapps.io)
 
 ## Description
 A dynamically create [REX-Ray configurations](http://rexray.readthedocs.io/en/latest/user-guide/config/) based upon form inputs.
@@ -10,22 +10,23 @@ Choose the service to add and begin filling out the forms. Angular.js will detec
 
 At this time, only 1 service can be added and it's encouraged to validate using [yamllint](http://www.yamllint.com/). 
 
+Refer to the Modal/Tooltip/Popover for individual labels explaining what each
+means to cut down on the need to refer back to the documentation
+
 ## Future
 
 - Add new service types as they are introduced in v0.10.X. 
   - New service forms are added using the `/services` folder
+- Create Container Storage Interface config options
 - Integrate pre-error checks for certain services where one value takes precedent over another. 
    - example. ScaleIO `System Name` vs `System ID`.
-- Add Modal/Tooltip/Popover for individual labels explaining what each means. [DONE]
-  - This will cut down on the need to refer back to the documentation.
 - Add ability to have multiple services and utilize modules
-- Add libStorage Server configuration options [1/2 Done]
 
 ## Contribution
 
 To do local development, utilize `python -m SimpleHTTPServer`.
 
-Create a fork of the project into your own reposity. Make all your necessary changes and create a pull request with a description on what was added or removed and details explaining the changes in lines of code. If approved, project owners will merge it
+Create a fork of the project into your own repository. Make all your necessary changes and create a pull request with a description on what was added or removed and details explaining the changes in lines of code. If approved, project owners will merge it
 
 ## Support
 Please file bugs and issues on the Github issues page for this project. This is

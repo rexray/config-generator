@@ -4,5 +4,5 @@ applications:
   memory: 128M
   instances: 1
   path: .
-  domain: thecodeteam.com
+  domain: cfapps.io
   buildpack: staticfile_buildpack
